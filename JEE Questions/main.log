@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.8.4)  5 AUG 2024 19:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.8.4)  5 AUG 2024 19:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1279,29 +1279,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 55--57
  []
 
 
-Overfull \hbox (2.21936pt too wide) in paragraph at lines 68--70
+Overfull \hbox (2.21936pt too wide) in paragraph at lines 67--69
 []\OT1/txr/m/n/12 If $\OML/txmi/m/it/12 exp\OMS/txsy/m/n/12 f[] \OML/txmi/m/it/
 12 ln\OT1/txr/m/n/12 2\OMS/txsy/m/n/12 g$
  []
 
 
-Underfull \hbox (badness 3386) in paragraph at lines 72--74
+Underfull \hbox (badness 3386) in paragraph at lines 71--73
 []\OT1/txr/m/n/12 Determine the small-est pos-i-tive value of
  []
 
 
-Underfull \hbox (badness 2088) in paragraph at lines 72--74
+Underfull \hbox (badness 2088) in paragraph at lines 71--73
 \OML/txmi/m/it/12 x$ $[]$ \OT1/txr/m/n/12 for which $[] [] =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--78
+Underfull \hbox (badness 10000) in paragraph at lines 75--77
 []\OT1/txr/m/n/12 Find all val-ues of $\OML/txmi/m/it/12 ^^R$ \OT1/txr/m/n/12 i
 n the in-ter-val
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--78
+Underfull \hbox (badness 10000) in paragraph at lines 75--77
 []$ \OT1/txr/m/n/12 sat-is-fy-ing the equa-tion
  []
 
@@ -1323,7 +1323,7 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  30220 strings out of 476106
  591942 string characters out of 5793934
- 1958975 words of memory out of 5000000
+ 1957975 words of memory out of 5000000
  51568 multiletter control sequences out of 15000+600000
  625040 words of font info for 180 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
@@ -1334,7 +1334,7 @@ exmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a
 .pfb>
-Output written on main.pdf (1 page, 43430 bytes).
+Output written on main.pdf (1 page, 43463 bytes).
 PDF statistics:
  65 PDF objects out of 1000 (max. 8388607)
  49 compressed objects within 1 object stream
