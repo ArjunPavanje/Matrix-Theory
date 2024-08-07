@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.8.4)  5 AUG 2024 19:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.8.4)  7 AUG 2024 12:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1279,9 +1279,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 55--57
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 55--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--60
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--63
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--65
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--67
+
+ []
+
+
 Overfull \hbox (2.21936pt too wide) in paragraph at lines 67--69
 []\OT1/txr/m/n/12 If $\OML/txmi/m/it/12 exp\OMS/txsy/m/n/12 f[] \OML/txmi/m/it/
 12 ln\OT1/txr/m/n/12 2\OMS/txsy/m/n/12 g$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--69
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--71
+
  []
 
 
@@ -1292,6 +1332,16 @@ Underfull \hbox (badness 3386) in paragraph at lines 71--73
 
 Underfull \hbox (badness 2088) in paragraph at lines 71--73
 \OML/txmi/m/it/12 x$ $[]$ \OT1/txr/m/n/12 for which $[] [] =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--75
+
  []
 
 
@@ -1306,10 +1356,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--77
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 75--77
+
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf
--dist/fonts/enc/dvips/base/8r.enc}
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--79
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--81
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--85
+[]\OT1/txr/m/n/12 Find the range of val-ues of for
+ []
+
+
+Underfull \hbox (badness 3428) in paragraph at lines 83--85
+\OT1/txr/m/n/12 which $2 [] [] = []$, t $\OMS/txsy/m/n/12 2 []$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--85
+
+ []
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-
+dist/fonts/enc/dvips/base/8r.enc}
 
 
 ] (./main.aux)
@@ -1323,7 +1408,7 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  30220 strings out of 476106
  591942 string characters out of 5793934
- 1957975 words of memory out of 5000000
+ 1958975 words of memory out of 5000000
  51568 multiletter control sequences out of 15000+600000
  625040 words of font info for 180 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
@@ -1334,7 +1419,7 @@ exmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a
 .pfb>
-Output written on main.pdf (1 page, 43463 bytes).
+Output written on main.pdf (1 page, 43485 bytes).
 PDF statistics:
  65 PDF objects out of 1000 (max. 8388607)
  49 compressed objects within 1 object stream
