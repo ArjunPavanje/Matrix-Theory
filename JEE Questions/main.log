@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.8.4)  9 AUG 2024 20:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.8.4)  9 AUG 2024 22:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1299,11 +1299,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 78--80
  []
 
 
-Overfull \hbox (2.87518pt too wide) detected at line 83
-[]
- []
-
-
 Underfull \hbox (badness 5771) in paragraph at lines 83--86
 \OT1/txr/m/n/12 de-ter-mine the val-ues of $\OML/txmi/m/it/12 A$\OT1/txr/m/n/12
  , $\OML/txmi/m/it/12 B$ \OT1/txr/m/n/12 and $\OML/txmi/m/it/12 C$\OT1/txr/m/n/
@@ -1398,7 +1393,7 @@ exmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a
 .pfb>
-Output written on main.pdf (2 pages, 43653 bytes).
+Output written on main.pdf (2 pages, 43658 bytes).
 PDF statistics:
  69 PDF objects out of 1000 (max. 8388607)
  52 compressed objects within 1 object stream
