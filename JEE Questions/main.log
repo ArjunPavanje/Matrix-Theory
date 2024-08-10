@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.8.4)  10 AUG 2024 09:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.8.4)  10 AUG 2024 09:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1278,11 +1278,6 @@ Overfull \hbox (5.54732pt too wide) in paragraph at lines 86--88
 []\OT1/txr/m/n/12 If $[] []$
  []
 
-
-Overfull \hbox (6.42998pt too wide) detected at line 93
-[]
- []
-
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-
 dist/fonts/enc/dvips/base/8r.enc}
 
@@ -1309,7 +1304,7 @@ exmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a
 .pfb>
-Output written on main.pdf (1 page, 43293 bytes).
+Output written on main.pdf (1 page, 43298 bytes).
 PDF statistics:
  65 PDF objects out of 1000 (max. 8388607)
  49 compressed objects within 1 object stream
