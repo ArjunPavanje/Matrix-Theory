@@ -26,7 +26,7 @@ B = np.array(([4,6])).reshape(-1,1)
 n=2/1
 
 #Point
-P= (B+n*A)/(1+n) # calculating the coordinate points of R which divides the join between the two points
+P= (A+n*B)/(1+n) # calculating the coordinate points of R which divides the join between the two points
 #print(R)
 
 #Generating all lines
