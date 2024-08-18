@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.8.4)  15 AUG 2024 13:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.8.4)  19 AUG 2024 00:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Assignment2.tex
+**assignment2.tex
 (./Assignment2.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -22,6 +22,7 @@ LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 5
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
+** ATTENTION: Single column mode is not typically used with IEEE publications.
 -- Using 8.5in x 11in (letter) paper.
 -- Using PDF output.
 \@IEEEnormalsizeunitybaselineskip=\dimen143
@@ -111,11 +112,6 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
 \c@tracingmulticols=\count268
-
-
-Package multicol Warning: May not work with the twocolumn option on input line 
-143.
-
 \mult@box=\box53
 \multicol@leftmargin=\dimen164
 \c@unbalance=\count269
@@ -182,7 +178,8 @@ Package multicol Warning: May not work with the twocolumn option on input line
 \mult@nat@firstbox=\box97
 \colbreak@box=\box98
 \mc@col@check@num=\count277
-) (/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
@@ -1335,56 +1332,53 @@ Package hyperref Info: Link coloring OFF on input line 51.
 \openout5 = `Assignment2.out'.
 
 LaTeX Font Info:    Trying to load font information for U+txsya on input line 6
-5.
+2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txsyb on input line 6
-5.
+2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txmia on input line 6
-5.
+2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txsyc on input line 6
-5.
+2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for TS1+txr on input line 6
-5.
+2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 )
-Underfull \hbox (badness 4316) in paragraph at lines 83--86
-[]\OT1/txr/m/n/12 The value of $[] [] []$ is
+Underfull \hbox (badness 10000) detected at line 65
+ []$[]  \OML/txmi/m/it/12 ^^R \OT1/txr/m/n/12 = [][] [] + [][] []  + [][] []  $
+ 
  []
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-
-dist/fonts/enc/dvips/base/8r.enc}
-
-
-]
-Underfull \hbox (badness 4792) in paragraph at lines 209--212
-[]\OT1/txr/m/n/12 The prin-ci-pal value of $[][] []$ is
+dist/fonts/enc/dvips/base/8r.enc}]
+Underfull \hbox (badness 10000) detected at line 169
+ []$[]  [][] [][] \OT1/txr/m/n/12 =  $ 
  []
 
 
-Underfull \hbox (badness 1509) in paragraph at lines 240--244
-\OT1/txr/m/n/12 Assuming $[][] []$ takes val-ues in $[] []$,
+Overfull \hbox (0.73117pt too wide) in paragraph at lines 236--240
+\OT1/txr/m/n/12 Assuming $[][] []$ takes val-ues in $[] []$, which of the fol-l
+ow-ing op-tions is/are cor-rect  $[]$ 
  []
 
-[2
-
-] (./Assignment2.aux)
+[2] [3] (./Assignment2.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -1393,23 +1387,23 @@ Package rerunfilecheck Info: File `Assignment2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30496 strings out of 476106
- 596191 string characters out of 5793934
- 1974975 words of memory out of 5000000
+ 30498 strings out of 476106
+ 596208 string characters out of 5793934
+ 1956975 words of memory out of 5000000
  51788 multiletter control sequences out of 15000+600000
  616338 words of font info for 151 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 101i,14n,103p,1179b,689s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,14n,103p,1179b,693s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/txfonts/rtxsc.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
 r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Assignment2.pdf (2 pages, 53427 bytes).
+Output written on Assignment2.pdf (3 pages, 53825 bytes).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
- 109 compressed objects within 2 object streams
- 62 named destinations out of 1000 (max. 500000)
+ 133 PDF objects out of 1000 (max. 8388607)
+ 112 compressed objects within 2 object streams
+ 63 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

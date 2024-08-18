@@ -1,7 +1,7 @@
 %iffalse
 \let\negmedspace\undefined
 \let\negthickspace\undefined
-\documentclass[journal,12pt,twocolumn,article]{IEEEtran}
+\documentclass[journal,12pt,onecolumn,article]{IEEEtran}
 \usepackage{multicol}
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
@@ -55,16 +55,13 @@
 \title{Assignment 2}
 \author{EE24BTECH11005 - Arjun Pavanje}
 \maketitle
-\newpage
-\bigskip
-
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
 \section*{A. Fill in the Blanks}
 \begin{enumerate}
 \item Let $a,b,c$ be positive real numbers. Let
 \begin{multline*}
-	\theta = \tan ^{-1}\brak{\sqrt{\frac{a\brak{a+b+c}}{bc}}} + \tan ^{-1}\\\brak{\sqrt{\frac{b\brak{a+b+c}}{ca}}}\ + \tan ^{-1}\brak{\sqrt{\frac{c\brak{a+b+c}}{ab}}} 
+\theta = \tan ^{-1}\brak{\sqrt{\frac{a\brak{a+b+c}}{bc}}} + \tan ^{-1}\brak{\sqrt{\frac{b\brak{a+b+c}}{ca}}}\ + \tan ^{-1}\brak{\sqrt{\frac{c\brak{a+b+c}}{ab}}} 
 \end{multline*}
 Then $\tan \brak{\theta}= \rule{2cm}{0.1pt}$ 
 \hfill \brak{1981-2Marks}
@@ -132,9 +129,9 @@ is
 \end{enumerate}
 \item If
 \begin{align*}
-\sin ^{-1}\brak{x-\frac{x^2}{2}+\frac{x^3}{4}-\ldots}+ \\\cos ^{-1}\brak{x^2-\frac{x^4}{2}+\frac{x^6}{4}-\ldots}=\frac{\pi}{2}
+\sin ^{-1}\brak{x-\frac{x^2}{2}+\frac{x^3}{4}-\ldots}+ \cos ^{-1}\brak{x^2-\frac{x^4}{2}+\frac{x^6}{4}-\ldots}=\frac{\pi}{2}
 \end{align*}
-for $0<|x|<\sqrt{2}$, then $x$ equals 
+for $0<\abs{x}<\sqrt{2}$, then $x$ equals 
 \hfill \brak{2001S}
 \begin{enumerate}
 \begin{multicols}{2}
@@ -168,8 +165,7 @@ is
 \end{enumerate}
 \item  If $0<x<1$, then 
 \begin{multline*}
-\sqrt{1+x^2}\sbrak{\cbrak{ x\cos \brak{\cot ^{-1}\brak{x}}+ \sin \brak{\cot ^{-1}\brak{x}}}^2 \right.\\
-\left. - 1}^{\frac{1}{2}}=
+\sqrt{1+x^2}\sbrak{\cbrak{ x\cos \brak{\cot ^{-1}\brak{x}}+ \sin \brak{\cot ^{-1}\brak{x}}}^2 - 1}^{\frac{1}{2}}=
 \end{multline*}
 is
 \hfill \brak{2008}
