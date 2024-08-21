@@ -1,0 +1,94 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{1-1.6-11}
+\author{EE24BTECH11005 - Arjun Pavanje
+}
+% \maketitle
+% \newpage
+% \bigskip
+{\let\newpage\relax\maketitle}
+Question:\\
+lf the points $\vec{A}\brak{1, 2}$, $\vec{O}\brak{0, 0}$ and $\vec{C}\brak{a,b}$ are collinear, then find the relation between
+$a$ and $b$.
+\\
+\solution
+\begin{table}[h!]    
+  \centering
+  \input{tables/table.tex}
+  \caption{Variables Used}
+  \label{tab1-1.5-29}
+\end{table}\\
+First we should construct the collinearity matrix with the given points A,O,B
+\begin{align}
+\myvec{
+O-A \\
+B-O
+}
+\end{align}
+\begin{align}
+\myvec{
+-1 & -2\\
+a & b
+}
+\xleftrightarrow[]{R_2 \rightarrow {R_2-aR_1}}
+\myvec{
+-1 & -2\\
+0 & b-2a
+}
+\end{align}
+given that the three points are collinear, the rank of collinearity matrix should be 1\\
+for that to occur, the $R_2$ must be fully $0$.
+Therefore,
+\begin{align}
+	b-2a&=0\\
+	\therefore b&=2a
+\end{align}
+The required relation between $a$, and $b$ is, $b=2a$
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width=0.7\linewidth]{figs/Figure_1.png}
+   \caption{Plot of the points A,O,B}
+   \label{stemplot}
+\end{figure}
+\end{document}
