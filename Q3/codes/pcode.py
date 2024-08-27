@@ -11,30 +11,23 @@ import numpy as np
 import numpy.linalg as LA
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
-
+import ctypes
 #local imports
-from line.funcs import *
 from triangle.funcs import *
 from conics.funcs import circ_gen
-# Read the points from the file
-points = {}
-with open("points.txt", "r") as file:
-    for line in file:
-        parts = line.split()
-        label = parts[0]
-        x = int(parts[1])
-        y = int(parts[2])
-        points[label] = (x, y)
 
-# Extract the coordinates
-Ax, Ay = points['A']
-Bx, By = points['B']
-Cx, Cy = points['C']
+class points(ctypes.Structure):
+    _fields_ = [('A', (ctypes.c_int * 2)), ('B', (ctypes.c_int * 2)), ('C',(ctypes.c_int *2))]
 
+ptr = ctypes.CDLL('./ccode.so')
+ptr.get.argtypes = None
+ptr.get.restype = points
 
-A = np.array(([Ax,Ay])).reshape(-1,1)
-C = np.array(([Cx,Cy])).reshape(-1,1)
-B = np.array(([Bx,By])).reshape(-1,1)
+pts = np.ctypeslib.as_array(ptr.get()).tolist()
+
+A = np.array(([pts[0][0],pts[0][1]])).reshape(-1,1)
+B = np.array(([pts[1][0],pts[1][1]])).reshape(-1,1)
+C = np.array(([pts[2][0],pts[2][1]])).reshape(-1,1)
 x_AC = line_gen(A,C)
 
 #Plotting all lines

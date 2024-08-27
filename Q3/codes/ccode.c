@@ -1,27 +1,16 @@
-#include <stdio.h>
+struct points{
+    int A[2];
+    int B[2];
+	int C[2];
+};
 
-int main() {
-    // Define the pBints
-    int Ax = 2, Ay = 3;
-    int Bx = 4, By = 0;
-    int Cx = 6, Cy = -3;
-
-    // Bpen the file fBr writing
-    FILE *file = fopen("points.txt", "w");
-    if (file == NULL) {
-        printf("ErrBr Bpening file!\n");
-        return 1;
-    }
-
-    // Write the pBints tB the file
-    fprintf(file, "A %d %d\n", Ax, Ay);
-    fprintf(file, "B %d %d\n", Bx, By);
-    fprintf(file, "C %d %d\n", Cx, Cy);
-
-    // Close the file
-    fclose(file);
-
-    printf("Points written to file successfully.\n");
-    return 0;
+struct points get(){
+    struct points temp;
+    temp.A[0] = 2;
+    temp.A[1] = 3;
+    temp.B[0] = 4;
+    temp.B[1] = 0;
+	temp.C[0] = 6;
+	temp.C[1]=-3;
+    return temp;
 }
-

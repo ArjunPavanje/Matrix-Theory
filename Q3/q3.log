@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.8.4)  25 AUG 2024 13:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.8.4)  28 AUG 2024 00:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1713,13 +1713,13 @@ LaTeX Font Info:    Trying to load font information for OT1+txr on input line 3
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
-) (./q3.aux)
+)
+No file q3.aux.
 \openout1 = `q3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 39.
 LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
 39.
-
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
@@ -1895,15 +1895,14 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring OFF on input line 39.
- (./q3.out)
-(./q3.out)
 \@outlinefile=\write5
 \openout5 = `q3.out'.
 
 \c@lstlisting=\count399
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 52
 .
- (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+txmia on input line 5
@@ -1957,14 +1956,20 @@ L3 programming layer <2020/03/25>
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: File `q3.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+Package rerunfilecheck Warning: File `q3.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `q3.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 52962 strings out of 476106
- 1254776 string characters out of 5793934
+ 52954 strings out of 476106
+ 1254696 string characters out of 5793934
  1938975 words of memory out of 5000000
- 74150 multiletter control sequences out of 15000+600000
+ 74148 multiletter control sequences out of 15000+600000
  624599 words of font info for 171 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
  109i,18n,109p,1192b,894s stack positions out of 10000i,1000n,20000p,200000b,200000s
