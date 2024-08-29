@@ -25,18 +25,18 @@ ptr.get.restype = points
 
 pts = np.ctypeslib.as_array(ptr.get()).tolist()
 
-O = np.array(([pts[0][0],pts[0][1]])).reshape(-1,1)
-A = np.array(([pts[1][0],pts[1][1]])).reshape(-1,1)
+A = np.array(([pts[0][0],pts[0][1]])).reshape(-1,1)
+P = np.array(([pts[1][0],pts[1][1]])).reshape(-1,1)
 B = np.array(([pts[2][0],pts[2][1]])).reshape(-1,1)
-x_OB = line_gen(O,B)
+x_AB = line_gen(A,B)
 
 #Plotting all lines
-plt.plot(x_OB[0,:],x_OB[1,:],label='$OA$')
+plt.plot(x_AB[0,:],x_AB[1,:],label='$AB$')
 
 #LaCeling the coordinates
-tri_coords = np.block([[O,A,B]])
+tri_coords = np.block([[A,P,B]])
 plt.scatter(tri_coords[0,:], tri_coords[1,:])
-vert_labels = ['O','A','B=(a,2a)']
+vert_labels = ['A','P','B']
 for i, txt in enumerate(vert_labels):
     #plt.annotate(txt, # this is the text
     plt.annotate(f'{txt}\n({tri_coords[0,i]:.0f}, {tri_coords[1,i]:.0f})',
@@ -54,5 +54,5 @@ plt.ylabel('$y$')
 plt.legend(loc='best')
 plt.grid() # minor
 plt.axis('equal')
-plt.title("Plot of points O,A,B")
+plt.title("Plot of points A,B,P")
 plt.show()
