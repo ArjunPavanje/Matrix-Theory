@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.8.4)  3 SEP 2024 19:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.8.4)  5 SEP 2024 17:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1952,9 +1952,14 @@ dist/fonts/enc/dvips/base/8r.enc}
 <figs/Figure_1.png, id=54, 1387.584pt x 711.1368pt>
 File: figs/Figure_1.png Graphic file (type png)
 <use figs/Figure_1.png>
-Package pdftex.def Info: figs/Figure_1.png  used on input line 111.
-(pdftex.def)             Requested size: 254.9356pt x 130.64676pt.
- [2 <./figs/Figure_1.png>] (./q5.aux)
+Package pdftex.def Info: figs/Figure_1.png  used on input line 112.
+(pdftex.def)             Requested size: 426.79134pt x 218.72481pt.
+
+Overfull \hbox (62.59604pt too wide) in paragraph at lines 112--113
+ [][] 
+ []
+
+[2 <./figs/Figure_1.png>] (./q5.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -1965,7 +1970,7 @@ Package rerunfilecheck Info: File `q5.out' has not changed.
 Here is how much of TeX's memory you used:
  52978 strings out of 476106
  1254980 string characters out of 5793934
- 1946975 words of memory out of 5000000
+ 1947975 words of memory out of 5000000
  74154 multiletter control sequences out of 15000+600000
  624633 words of font info for 171 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
@@ -1976,7 +1981,7 @@ exmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on q5.pdf (2 pages, 170081 bytes).
+Output written on q5.pdf (2 pages, 170147 bytes).
 PDF statistics:
  105 PDF objects out of 1000 (max. 8388607)
  68 compressed objects within 1 object stream
