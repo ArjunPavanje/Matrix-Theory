@@ -66,5 +66,5 @@ plt.ylabel('$y$')
 plt.legend(loc='best')
 plt.grid() # minor
 plt.axis('equal')
-plt.title("Plot of points A,B,C")
+plt.title("Plot of points P,Q,R")
 plt.show()
