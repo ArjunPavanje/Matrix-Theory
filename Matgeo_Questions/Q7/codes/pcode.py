@@ -1,70 +1,33 @@
-#Code by GVV Sharma
-#September 12, 2023
-#Revised July 21, 2024
-#released under GNU GPL
-#Point Vectors
-
-
-import sys                                          #for path to external scripts
-sys.path.insert(0, '/home/arjun-pavanje/Documents/Experiment /pythoncodes1/codes/CoordGeo')        #path to my scripts
 import numpy as np
-import numpy.linalg as LA
 import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
-from mpl_toolkits.mplot3d import Axes3D
+import os
 
-#local imports
-from line.funcs import *
-from triangle.funcs import *
-from conics.funcs import circ_gen
-import ctypes 
+# Load the points from the text file
+points = np.loadtxt("triangle_points.txt", delimiter=',', max_rows=len(list(open("./triangle_points.txt")))-1)
 
-class points(ctypes.Structure):
-    _fields_ = [('Q', (ctypes.c_int * 2)), ('P', (ctypes.c_int * 2)), ('Ra',(ctypes.c_int *2)),('Rb',(ctypes.c_int *2))]
+# Extract the x and y coordinates
+x = points[:, 0]
+y = points[:, 1]
+Q = np.array([0, 1]).reshape(-1,1)
+P=np.array([5, -3]).reshape(-1,1)
+R1 = np.array([4, 6]).reshape(-1,1)
+R2 = np.array([-4, 6]).reshape(-1,1)
+plt.figure()
+plt.plot(x, y, label='PR', linestyle='-', color='blue')
 
-ptr = ctypes.CDLL('./ccode.so')
-ptr.get.argtypes = None
-ptr.get.restype = points
-
-pts = np.ctypeslib.as_array(ptr.get()).tolist()
-
-
-#Given points
-
-Q = np.array(([pts[0][0],pts[0][1]])).reshape(-1,1)
-P = np.array(([pts[1][0],pts[1][1]])).reshape(-1,1)
-Ra = np.array(([pts[2][0],pts[2][1]])).reshape(-1,1)
-Rb = np.array(([pts[3][0],pts[3][1]])).reshape(-1,1)
-#Generating all lines
-x_P1 = line_gen(P,Ra)
-x_P2 = line_gen(P,Rb)
-x_PQ = line_gen(P,Q)
-x_Q1 = line_gen(Q,Ra)
-x_Q2 = line_gen(Q,Rb)
-
-#Plotting all lines
-plt.plot(x_P1[0,:],x_P1[1,:],label = '$PR$',color='red')
-plt.plot(x_P2[0,:],x_P2[1,:],label='$PR$',color='green')
-plt.plot(x_Q1[0,:],x_Q1[1,:],label = '$QR$',color='blue')
-plt.plot(x_Q2[0,:],x_Q2[1,:],label='$QR$',color='blue')
-plt.plot(x_PQ[0,:],x_PQ[1,:],label='$PQ$',color='blue')
-
-
-# Scatter plot
-tri_coords = np.block([P,Q,Ra,Rb])  # Stack A, B, C vertically
-plt.scatter(tri_coords[0, :], tri_coords[1, :])
+tri_coords = np.block([P,Q,R1,R2])  
+plt.scatter(tri_coords[0,:], tri_coords[1, :])
 vert_labels = ['P','Q','R','R']
-
+plt.plot([Q[0], P[0]], [Q[1], P[1]], color='gray', linestyle='--', label='Line PQ')
+plt.plot([Q[0], R1[0]], [Q[1], R1[1]], color='gray', linestyle='--', label='Line QR')
+plt.plot([Q[0], R2[0]], [Q[1], R2[1]], color='gray', linestyle='--', label='Line QR')
 for i, txt in enumerate(vert_labels):
     # Annotate each point with its label and coordinates
     plt.text(tri_coords[0, i], tri_coords[1, i], f'{txt}\n({tri_coords[0, i]:.0f}, {tri_coords[1, i]:.0f})',
-             fontsize=12, ha='center', va='bottom')
-
-
-plt.xlabel('$x$')
-plt.ylabel('$y$')
-plt.legend(loc='best')
-plt.grid() # minor
-plt.axis('equal')
-plt.title("Plot of points P,Q,R")
+             fontsize=12, color = 'black', ha='center', va='bottom')
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("plot of points P,Q,R")
+plt.grid(True)
+plt.legend()
 plt.show()
