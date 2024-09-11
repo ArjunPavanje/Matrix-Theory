@@ -12,7 +12,7 @@ z1 = points[:21, 2]
 x = points[21:, 0]
 y = points[21:, 1]
 z = points[21:, 2]
-A = np.array([1,-2,1]).reshape(-1,1)
+A = np.array([1,-2,2]).reshape(-1,1)
 B = np.array([9,-18,18]).reshape(-1,1)
 C = np.array([0,0,0]).reshape(-1,1)
 fig = plt.figure(figsize=(8, 6))
