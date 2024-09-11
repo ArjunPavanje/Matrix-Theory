@@ -1,0 +1,94 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{1-1.10-10}
+\author{EE24BTECH11005 - Arjun Pavanje
+}
+% \maketitle
+% \newpage
+% \bigskip
+{\let\newpage\relax\maketitle}
+Question:\\
+The vector in the direction of the vector \myvec{1\\-2\\2} that has magnitude 9 is
+\begin{enumerate}
+\begin{multicols}{2}
+\item $\myvec{1\\-2\\2}$
+\columnbreak
+\item $\myvec{1\\-2\\2}$
+\end{multicols}
+\begin{multicols}{2}
+	\item $3\myvec{1\\-2\\2}$
+\columnbreak
+\item $9\myvec{1\\-2\\2}$
+\end{multicols}
+\end{enumerate}
+
+\begin{table}[h!]    
+  \centering
+  \input{tables/table.tex}
+  \caption{Variables Used}
+  \label{tab1-1.9-6}
+\end{table}
+\solution
+Unit vector in the direction of $\vec{A}$ is
+\begin{align}
+	\frac{A}{\norm{A}}
+\end{align}
+\begin{align}
+	\norm{A} &= A^TA\\
+	&= \myvec{1\\-2\\2}\myvec{1 & -2 & 2}\\
+	&= \sqrt{9} = 3
+\end{align}
+$\therefore$ the vector in the direction of $\vec{A}$, with 9 times its magnitude is
+\begin{align}
+	9 \frac{A}{\norm{A}} &= 9 \frac{\myvec{1\\-2\\2}}{3}\\
+	&= 3\myvec{1\\-2\\2}
+\end{align}
+so, $3) = 3\myvec{1\\-2\\3}$ is the required vector
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width = 1\linewidth]{figs/fig.png}
+   \caption{Plot of P,Q,R}
+   \label{stemplot}
+\end{figure}
+\end{document}
