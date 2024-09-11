@@ -23,7 +23,6 @@ int main() {
     double x1, y1, z1, x2, y2, z2, x3, y3, z3;
 	//    scanf("%lf %lf %lf %lf %lf %lf", &x1, &y1, &x2, &y2, &x3, &y3);
     x1 = 1; y1 = -2; z1 = 2;
-    x2 = 9; y2 = -18; z2 = 18;
     x3 = 0; y3 = 0; z3 = 0;
 
     int m = 3, n = 1;
@@ -33,13 +32,10 @@ int main() {
     A[0][0] = x1;
     A[1][0] = y1;
 	A[2][0] = z1;
-    B[0][0] = x2;
-    B[1][0] = y2;
-	B[2][0] = z2;
     C[0][0] = x3;
     C[1][0] = y3;
 	C[2][0] = z3;
-
+	B = Matscale(A,3,1,9);
     FILE *fptr;
     fptr = fopen("line_points.txt", "w");
     if (fptr == NULL) {
