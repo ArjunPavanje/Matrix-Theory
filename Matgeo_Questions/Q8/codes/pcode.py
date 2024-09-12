@@ -13,16 +13,16 @@ x = points[21:, 0]
 y = points[21:, 1]
 z = points[21:, 2]
 A = np.array([1,-2,2]).reshape(-1,1)
-B = np.array([9,-18,18]).reshape(-1,1)
+B = np.array([3,-6,6]).reshape(-1,1)
 C = np.array([0,0,0]).reshape(-1,1)
 fig = plt.figure(figsize=(8, 6))
 ax = fig.add_subplot(111, projection='3d')
 
 ax.plot(x1, y1, z1, label='A', linestyle='-', color='yellow')  
-ax.plot(x, y, z, label='9A', linestyle='-', color='green')
+ax.plot(x, y, z, label='9A', linestyle='solid', color='green')
 tri_coords = np.block([A,B])  
 ax.scatter(tri_coords[0,:], tri_coords[1, :], tri_coords[2,:])
-vert_labels = ['A','9A'];
+vert_labels = ['A','3A'];
 for i, txt in enumerate(vert_labels):
     # Annotate each point with its label and coordinates
     ax.text(tri_coords[0, i], tri_coords[1, i], tri_coords[2, i], f'{txt}\n({tri_coords[0, i]:.0f}, {tri_coords[1, i]:.0f}, {tri_coords[2, i]:.0f})',

@@ -35,7 +35,7 @@ int main() {
     C[0][0] = x3;
     C[1][0] = y3;
 	C[2][0] = z3;
-	B = Matscale(A,3,1,9);
+	B = Matscale(A,3,1,3);
     FILE *fptr;
     fptr = fopen("line_points.txt", "w");
     if (fptr == NULL) {
