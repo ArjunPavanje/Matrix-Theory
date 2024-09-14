@@ -1,0 +1,85 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{1-1.11-4}
+\author{EE24BTECH11005 - Arjun Pavanje
+}
+% \maketitle
+% \newpage
+% \bigskip
+{\let\newpage\relax\maketitle}
+Question:\\
+Find a unit vector perpendicular to both vectors $\vec{a}\myvec{1\\-7\\7}$ and $\vec{b}\myvec{3\\-2\\2}$
+\begin{table}[h!]    
+  \centering
+  \input{tables/table.tex}
+  \caption{Variables Used}
+  \label{tab1-1.9-6}
+\end{table}\\
+\solution
+Let $\vec{x}$ be a vector perpendicular to both $\vec{a},\vec{b}$. Then,
+$$\vec{x}=\myvec{x_1\\x_2\\x_3}$$
+\begin{align}
+	\myvec{\vec{a^T}\\\vec{b^T}}\vec{x}=0\\
+	\myvec{1&-7&7\\3&-2&2}\vec{x}=0
+\end{align}
+Using row reduction, then back substitution,
+\begin{align}
+	\myvec{1&-7&7\\3&-2&2}&\xleftrightarrow[]{R_2=R_2+R_1}\myvec{1&-7&7\\4&0&0}\\
+	x_1=0, x_2=7x_3\\
+	\vec{x}=x_2\myvec{0\\1\\1}
+\end{align}
+Here, $x_2 \in R$, we need to pick it such that magnitude is $1$
+\begin{align}
+	\norm{x}&=\sqrt{x^Tx}=\sqrt{(x_2)^2\myvec{0&1&1}\myvec{0\\1\\1}}=1\\
+	2{x_2}^2&=1\\
+	x_2&=\pm \frac{1}{\sqrt{2}}
+\end{align}
+Required unit vector is $\frac{1}{\sqrt{2}}\myvec{0\\1\\1}$
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width = 1\linewidth]{figs/fig.png}
+   \caption{Plot of the vectors}
+   \label{stemplot}
+\end{figure}
+\end{document}
