@@ -1,0 +1,88 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+	
+\title{9-9.3-1}
+\author{EE24BTECH11005 - Arjun Pavanje}
+% \maketitle
+% \newpage
+% \bigskip
+{\let\newpage\relax\maketitle}
+Question:\\
+Find the area of the region in the first quadrant enclosed by the $X$ axis, the line $y=x$ and the circle $x^2+y^2=32$
+\begin{table}[h!]    
+  \centering
+  \input{tables/table.tex}
+  \caption{Variables Used}
+  \label{tab1-1.9-6}
+\end{table}\\
+\solution
+Line equation of form $\vec{x}=\vec{h}+k\vec{m}$
+\begin{align}
+\vec{x}=\myvec{0\\0}+k\myvec{1\\1}
+\end{align}
+Equation of parabola of form $\vec{x}^{\top}\vec{V}\vec{x}+2\vec{u}^{\top}\vec{x}+f=0$ is
+\begin{align}
+	\vec{u}=\myvec{0\\0},f=\norm{\vec{u}}^2-r^2,\vec{V}=\myvec{1&0\\0&1}
+\end{align}
+If a line intersects the conic, $k$ value of intersecting point is given by,
+\begin{align}
+	k_i=\frac{-\vec{m}^{\top}\brak{\vec{Vh}+\vec{u}}\pm\sqrt{\sbrak{\vec{m}^{\top}\brak{\vec{Vh}+\vec{u}}}^2-g\brak{h}\brak{\vec{m}^{\top}\vec{Vm}}}}{\vec{m}^{\top}\vec{Vm}}
+\end{align}
+On substituting values of $\vec{u},\vec{m},\vec{h},\vec{V}$ we get,
+\begin{align}
+	k=\pm4
+\end{align}
+Points of intersection with circle are, $\myvec{4\\4},\myvec{-4\\-4}$\\
+Area bound between the circle, line, $X$ axis, in the first quadrant is,
+\begin{align}
+	&\int_0^4 xdx+\int_4^{4\sqrt{2}} \sqrt{32-x^2}dx\\
+	&=4
+\end{align}
+Required Area = $4$ sq. units
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width = 1\linewidth]{figs/fig.png}
+   \caption{Circle $y^2+x^2=32$, Line $x=y$}
+   \label{stemplot}
+\end{figure}
+\end{document}
