@@ -4,7 +4,7 @@ import os
 import matplotlib.image as mpimg
 from mpl_toolkits.mplot3d import Axes3D
 # Load the points from the text file
-points = np.loadtxt("line_points.txt", delimiter=',', max_rows=len(list(open("./triangle_points.txt")))-1)
+points = np.loadtxt("line_points.txt", delimiter=',', max_rows=len(list(open("./line_points.txt")))-1)
 # Extract the x and y coordinates
 x = points[:, 0]
 y = points[:, 1]
