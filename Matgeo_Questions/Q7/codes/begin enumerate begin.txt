@@ -1,0 +1,12 @@
+\begin{enumerate}
+				\begin{multicols}{2}
+					\item
+					\columnbreak
+					\item
+				\end{multicols}
+				\begin{multicols}{2}
+					\item
+					\columnbreak
+					\item
+				\end{multicols}
+		\end{enumerate}
