@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+    \draw[thick] (0,0) circle (2cm);
+
+    \foreach \angle/\label in {0/1, 45/2, 90/3, 135/5, 180/4, 225/7, 270/8, 315/12} {
+        \draw[thick] (0,0) -- (\angle:2cm);
+        \node at (\angle:2.3cm) {\label};
+    }
+
+    \draw[thick] (0,0) circle (1cm);
+
+    \foreach \angle/\label in {0/12, 45/4^{th}, 90/3^{th}, 135/?, 180/4, 225/8, 270/7, 315/1} {
+        \node at (\angle:1.3cm) {\label};
+    }
+\end{tikzpicture}
+$
+
+\end{document}

@@ -1,0 +1,29 @@
+\documentclass{standalone}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+    \node [draw, circle] (sum) at (2, -3) {$\Sigma$};
+    
+    \node [draw, rectangle, minimum width=3cm, minimum height=1.5cm] (G) at (6, -3) {$Y$};
+    \node [draw, rectangle, minimum width=3cm, minimum height=1.5cm] (P) at (10, -3) {$P$};
+    \node [draw, rectangle, minimum width=2cm, minimum height=1.5cm] (K) at (4, -6) {$K$};
+    \node [draw, rectangle, minimum width=2cm, minimum height=1.5cm] (X) at (0, -3) {$X$};
+    \draw[->] (-2,-3)--(X);
+    \draw [->] (X.east) |- (sum.west); % Input arrow
+    \draw [->] (sum) -- (G); % From sum to G(z)
+    %\draw [->] (7.5,-3)--(P);
+    \draw[->] (G.east) |- (P.west);
+    %\draw [->] (G) -- ++(2, 0); % Output arrow from G(z)
+    \draw [->] (P.south) |- (K.east); % Feedback from G(z) to K
+    \draw [->] (K.west) -| (sum.south); % Feedback from K to sum
+
+    \node at (1.5, -2.5) {+}; 
+    \node at (1.5, -3.5) {+};
+
+\end{tikzpicture}
+
+\end{document}
+
