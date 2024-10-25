@@ -1,0 +1,33 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{document}
+
+\begin{tikzpicture}
+
+\draw  (5,12.25) rectangle (13.75,12.75);
+\draw  (5.5,12.25) -- (5,11.75);
+\draw  (5.5,12.25) -- (6,11.75);
+\draw  (6,11.75) -- (5,11.75);
+\draw  (13.25,12.25) -- (13.75,11.75);
+\draw  (13.75,11.75) -- (12.75,11.75);
+\draw  (10,12.75) -- (10,14.75);
+\draw  (10,14.75) -- (8.75,14.75);
+\draw  (8.5,14.5) -- (9.75,14.5);
+\draw  (9.75,14.5) -- (9.75,12.75);
+\draw  (8.75,14.75) -- (9,15);
+\draw  (9,15) -- (8,15);
+\draw  (8,15) -- (8.5,14.5);
+\draw [Triangle-Triangle,  dashed] (10.25,12.75) -- (10.25,14.75);
+\draw [Triangle-Triangle,  dashed] (8.5,14.25) -- (9.75,14.25);
+\draw [Triangle-Triangle] (5.5,11) -- (13.25,11);
+\draw  (12.75,11.75) -- (13.25,12.25);
+\draw [-Triangle] (8.25,16) -- (8.25,15);
+\node [font=\LARGE] at (7.5,16.25) {$P$};
+\node [font=\LARGE] at (10.5,13.75) {$a$};
+\node [font=\LARGE] at (9,13.75) {$a$};
+\node [font=\LARGE] at (9,11.25) {$L$};
+
+\end{tikzpicture}
+
+\end{document}

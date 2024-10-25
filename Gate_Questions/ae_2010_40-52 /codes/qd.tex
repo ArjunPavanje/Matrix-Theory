@@ -1,0 +1,20 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{document}
+
+\begin{tikzpicture}
+\draw [-Triangle] (6.25,11) -- (15,11);
+\draw [-Triangle] (6.25,6.25) -- (6.25,16.5);
+\draw  (6.25,11) -- (10,14.75);
+\draw  (10,14.75) -- (10,7.25);
+\draw  (10,7.25) -- (13.75,11);
+\node [font=\LARGE] at (6,17.25) {$M$};
+\draw  (6,14.75) -- (6.5,14.75);
+\draw  (6,7.25) -- (6.75,7.25);
+\node [font=\LARGE] at (5,14.75) {$0.3PL$};
+\node [font=\LARGE] at (5,7.25) {$-0.2PL$};
+\node [font=\LARGE] at (10.5,10.25) {$\frac{L}{2}$};
+\end{tikzpicture}
+
+\end{document}
