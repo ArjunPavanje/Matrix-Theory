@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.9.6)  26 OCT 2024 02:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.9.6)  26 OCT 2024 02:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1976,30 +1976,33 @@ Package pdftex.def Info: figs/para.png  used on input line 184.
 File: figs/a.png Graphic file (type png)
 <use figs/a.png>
 Package pdftex.def Info: figs/a.png  used on input line 193.
-(pdftex.def)             Requested size: 152.36655pt x 109.20605pt.
+(pdftex.def)             Requested size: 114.272pt x 81.90247pt.
 <figs/b.png, id=88, 746.79pt x 612.2875pt>
 File: figs/b.png Graphic file (type png)
 <use figs/b.png>
 Package pdftex.def Info: figs/b.png  used on input line 199.
-(pdftex.def)             Requested size: 149.35535pt x 122.45532pt.
- [3 <./figs/para.png> <./figs/a.png>]
-<figs/c.png, id=104, 753.81625pt x 432.61626pt>
+(pdftex.def)             Requested size: 112.01366pt x 91.83916pt.
+
+Overfull \vbox (1.10359pt too high) has occurred while \output is active []
+
+
+[3 <./figs/para.png> <./figs/a.png> <./figs/b.png>]
+<figs/c.png, id=107, 753.81625pt x 432.61626pt>
 File: figs/c.png Graphic file (type png)
 <use figs/c.png>
 Package pdftex.def Info: figs/c.png  used on input line 206.
-(pdftex.def)             Requested size: 150.76057pt x 86.52171pt.
-<figs/d.png, id=105, 749.80125pt x 755.82375pt>
+(pdftex.def)             Requested size: 113.06755pt x 64.88963pt.
+<figs/d.png, id=108, 749.80125pt x 755.82375pt>
 File: figs/d.png Graphic file (type png)
 <use figs/d.png>
 Package pdftex.def Info: figs/d.png  used on input line 212.
-(pdftex.def)             Requested size: 149.9576pt x 151.16206pt.
-<figs/q50.png, id=106, 639.38875pt x 320.19624pt>
+(pdftex.def)             Requested size: 112.46533pt x 113.36867pt.
+<figs/q50.png, id=109, 639.38875pt x 320.19624pt>
 File: figs/q50.png Graphic file (type png)
 <use figs/q50.png>
 Package pdftex.def Info: figs/q50.png  used on input line 241.
 (pdftex.def)             Requested size: 255.75096pt x 128.07622pt.
- [4 <./figs/b.png> <./figs/c.png> <./figs/d.png>] [5 <./figs/q50.png>] (./main.
-aux)
+ [4 <./figs/c.png> <./figs/d.png> <./figs/q50.png>] [5] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -2018,14 +2021,14 @@ Here is how much of TeX's memory you used:
  74444 multiletter control sequences out of 15000+600000
  624977 words of font info for 172 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 109i,13n,109p,1194b,1264s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,13n,109p,1194b,1156s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (5 pages, 152792 bytes).
+Output written on main.pdf (5 pages, 152741 bytes).
 PDF statistics:
  196 PDF objects out of 1000 (max. 8388607)
  143 compressed objects within 2 object streams
