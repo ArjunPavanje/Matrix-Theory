@@ -1,0 +1,348 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+\usepackage{float}
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{listings}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+	
+\title{EE 2012 14-26}
+\author{EE24BTECH11005 - Arjun Pavanje}
+% \maketitle
+% \newpage
+% \bigskip
+
+{\let\newpage\relax\maketitle}
+\begin{enumerate}
+\setcounter{enumi}{13}
+	\item With the initial condition $x\brak{1}=0.5$, the solution of the differential equation 
+		\begin{align*}
+			t\frac{dx}{dt}+x=t
+		\end{align*}
+		\begin{enumerate}
+				\begin{multicols}{2}
+				\item $x=t-\frac{1}{2}$
+						\columnbreak
+					\item $x=t^2-\frac{1}{2}$
+				\end{multicols}
+				\begin{multicols}{2}
+				\item $x=\frac{t^2}{2}$
+				\columnbreak
+			\item $x=\frac{t}{2}$
+
+				\end{multicols}
+		\end{enumerate}
+	\item The unilateral laplace transform of $f\brak{t}=\frac{1}{s^2+s+1}$is
+				\begin{enumerate}
+				\begin{multicols}{2}
+				\item $-\frac{s}{{s^2+s+1}^2}$
+				\columnbreak
+			\item $-\frac{2s-1}{{s^2+s+1}^2}$
+
+				\end{multicols}
+				\begin{multicols}{2}
+				\item $\frac{s}{{s^2+s+1}^2}$
+
+					\columnbreak
+				\item$\frac{2s-1}{{s^2+s+1}^2}$
+
+				\end{multicols}
+		\end{enumerate}
+	\item The average power deliver to an impedence $\brak{4-j3}\omega$ by a current $5\cos{\brak{100\pi t+100}}$
+\begin{enumerate}
+	\begin{multicols}{2}
+		\item  $44.2 W$
+		 \columnbreak
+		\item  $50W$
+    \end{multicols}
+    \begin{multicols}{2}
+	\item $62.5W$ 
+    \columnbreak
+\item $125W$
+    \end{multicols}
+\end{enumerate}
+\item In the following figure, $C_1$ and $C_2$ are ideal capacitors. $C_1$ has been charged to $12V$ before the ideal switch $S$ is closed at $t=0$. The current $i\brak{t}$ for all $t$ is
+\begin{figure}[!ht]
+\centering
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw (6.25,16) to[C,l={ \normalsize $C_1$}] (6.25,12.25);
+\draw (6.25,12.25) to[short] (10,12.25);
+\draw (10,16) to[C,l={ \normalsize $C_2$}] (10,12.25);
+\draw (6.25,16) to[closing switch,l={ \normalsize t=0}] (10,16);
+\node [font=\normalsize] at (7.75,14) {$i(t)$};
+\draw [->, >=Stealth] (7.25,15) .. controls (8.5,15.25) and (9.25,14.75) .. (8.5,13.25) ;
+\end{circuitikz}
+\end{figure}
+	\begin{enumerate}
+    \begin{multicols}{2}
+        \item zero
+    \columnbreak
+        \item a step function
+    \end{multicols}
+    \begin{multicols}{2}
+        \item an exponentially decaying function
+    \columnbreak
+        \item an impulse function
+    \end{multicols}
+\end{enumerate}
+\item The $i-v$ characteristics of the diode in the circuit given below are
+	\begin{align*}
+	\begin{cases}
+		\frac{v-0.7}{500}A, &v\ge0.7V\\
+		0A, v<0.7V
+	\end{cases}
+	\end{align*}
+\begin{figure}[!ht]
+\centering
+		\begin{circuitikz}
+\draw (6.25,14.75) to[battery1,l=$10V$] (6.25,11);
+\draw (6.25,14.75) to[R,l={ \normalsize 1k$\Omega$}] (10,14.75);
+\draw (10,14.75) to[D, l={ \normalsize v}] (10,11);
+\draw (6.25,11) to[short] (10,11);
+\end{circuitikz}
+\end{figure}	\\
+		The current in the circuit is,
+	\begin{enumerate}
+    \begin{multicols}{2}
+	\item $10mA$
+    \columnbreak
+\item $9.3mA$
+    \end{multicols}
+    \begin{multicols}{2}
+	\item $6.67mA$
+    \columnbreak
+\item $6.2mA$
+    \end{multicols}
+\end{enumerate}
+\item The output $Y$ of a $2-bit$ comparator is logic $1$ whenever the $2-bit$ input $A$ is greater than the $2-bit$ input $B$. The number of combinations for which the output is logic $1$.is
+\begin{enumerate}
+    \begin{multicols}{2}
+	\item $4$
+    \columnbreak
+\item $6$
+    \end{multicols}
+    \begin{multicols}{2}
+	\item $8$
+    \columnbreak
+\item $10$
+    \end{multicols}
+\end{enumerate}
+\item Consider the given circuit,\\
+\begin{figure}[!ht]
+\centering
+\begin{circuitikz}
+\draw (3.75,16) to[short, -o] (2.5,16) ;
+\draw (3.75,14.75) to[short, -o] (2.5,14.75) ;
+\draw (3.75,13) to[short, -o] (2.5,13) ;
+\draw (3.75,15.5) to[short] (3.75,14.75);
+\draw (3.75,13.5) to[short, -o] (3.75,14.75) ;
+\draw (3.75,16) to[short] (4,16);
+\draw (3.75,15.5) to[short] (4,15.5);
+\draw (4,16) node[ieeestd nand port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (5.75,15.75);
+\draw (3.75,13.5) to[short] (4,13.5);
+\draw (3.75,13) to[short] (4,13);
+\draw (4,13.5) node[ieeestd nand port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (5.75,13.25);
+\draw (5.75,15.75) to[short] (7.5,15.75);
+\draw (7.5,15.75) to[short] (7.75,15.75);
+\draw (7.5,15.25) to[short] (7.75,15.25);
+\draw (7.75,15.75) node[ieeestd nand port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (9.5,15.5);
+\draw (5.75,13.25) to[short] (7,13.25);
+\draw (7,13.75) to[short] (7.75,13.75);
+\draw (7,13.25) to[short] (7.75,13.25);
+\draw (7.75,13.75) node[ieeestd nand port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (10,13.5);
+\draw (7,13.75) to[short] (7,14.25);
+\draw (7,14.25) to[short] (10,14.25);
+\draw (10,14.25) to[short] (10,15.5);
+\draw (9.5,15.5) to[short] (10,15.5);
+\draw (7.5,15.25) to[short] (7.5,14.75);
+\draw (7.5,14.75) to[short] (10.5,14.75);
+\draw (10.5,14.75) to[short] (10.5,13.5);
+\draw (10.5,13.5) to[short] (10,13.5);
+\node [font=\normalsize] at (2,16) {A};
+\node [font=\normalsize] at (2,14.75) {CLK};
+\node [font=\normalsize] at (2,13) {B};
+\end{circuitikz}
+	\end{figure}\\
+	In this circuit, the race around 
+	\begin{enumerate}
+    \begin{multicols}{2}
+        \item Does not occur 
+    \columnbreak
+        \item Occurs when $CLK=0$
+    \end{multicols}
+    \begin{multicols}{2}
+        \item Occurs when $CLK=0$ and $A=B=1$
+    \columnbreak
+        \item Occurs when $CLK=1$ and $A=B=0$
+    \end{multicols}
+\end{enumerate}
+\item The figure shoes a two-generator system supplying a load of $P_D=40MW$, connected at bus $2$\\
+\begin{figure}[!ht]
+\centering
+	\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw (3.25,16) to[sinusoidal voltage source, sources/symbol/rotate=auto] (4,16);
+\draw [ color={rgb,255:red,255; green,250; blue,250} ] (9.75,15) rectangle (11.75,15);
+\draw [->, >=Stealth] (4,16) -- (4.5,16);
+\draw [short] (4.5,16.75) -- (4.5,15.25);
+\draw [short] (4.5,16) -- (8.75,16);
+\draw [short] (8.75,16.75) -- (8.75,15.25);
+\draw (9.25,16.5) to[sinusoidal voltage source, sources/symbol/rotate=auto] (10,16.5);
+\draw [->, >=Stealth] (9.25,16.5) -- (8.75,16.5);
+\draw [short] (8.75,15.5) -- (9.25,15.5);
+\draw [->, >=Stealth] (9.25,15.5) -- (9.25,13.75);
+\node [font=\normalsize] at (9,13.25) {$P_D=40MW$};
+\node [font=\normalsize] at (8.75,17) {$Bus 2$};
+\node [font=\normalsize] at (4.5,17) {$Bus 1$};
+\node [font=\normalsize] at (4,15.5) {$P_{G1}$};
+\node [font=\normalsize] at (3.25,16.5) {$G_1$};
+\node [font=\normalsize] at (10.25,17) {$G_2$};
+\node [font=\normalsize] at (9.25,16) {$P_{G2}$};
+\end{circuitikz}\end{figure}\\
+The fuel costs of generators $G_1$, $G_2$ are:\\
+$C_1\brak{P_{G1}}=10,000Rs/MWh$ and $C_2\brak{P_{G2}}=12,500Rs/MWh$\\
+and the loss in the line $P_{loss\brak{pu}}=0.5P_{G1\brak{pu}}^2$, where the loss coeffecient is specified in pu on a $100MVA$ base.  The most economic power generation schedule in $MW$ is,
+	\begin{enumerate}
+    \begin{multicols}{2}
+	\item $P_{G1}=20,P_{G2}=22$
+    \columnbreak
+        \item $P_{G1}=22,P_{G2}=20$
+    \end{multicols}
+    \begin{multicols}{2}
+        \item $P_{G1}=20,P_{G2}=20$
+    \columnbreak
+        \item$P_{G1}=0,P_{G2}=40$
+	\end{multicols}
+\end{enumerate}
+\item The sequence of components in a fault current are as follows: $I_{\text{positive}}=j1.5pu,I_{\text{negative}}=-j0.5pu, I_{\text{zero}}=-j1pu$ . The type of fault in the system is
+	\begin{enumerate}
+    \begin{multicols}{2}
+	\item $LG$
+    \columnbreak
+\item $LL$
+    \end{multicols}
+    \begin{multicols}{2}
+	\item $LLG$
+    \columnbreak
+\item $LLLG$
+    \end{multicols}
+\end{enumerate}
+\item A half-controlled single-phase bridge rectifier is supplying an $R-L$ load. It is operated at a firing angle $\alpha$ and the load current is continuous. The fraction of cycle that the freewheeling diode conducts is
+	\begin{enumerate}
+    \begin{multicols}{2}
+	\item $\frac{1}{2}$
+    \columnbreak
+\item $1-\frac{\alpha}{\pi}$
+    \end{multicols}
+    \begin{multicols}{2}
+	\item $\frac{\alpha}{2\pi}$
+    \columnbreak
+\item $\frac{\alpha}{\pi}$
+    \end{multicols}
+\end{enumerate}
+
+\item The typical ratio of latching current to holding current in a $20 A$ thyristor is
+	\begin{enumerate}
+    \begin{multicols}{2}
+        \item $5.0$
+    \columnbreak
+        \item $2.0$
+    \end{multicols}
+    \begin{multicols}{2}
+        \item $1.0$
+    \columnbreak
+        \item $0.5$
+    \end{multicols}
+\end{enumerate}
+\item For the circuit shown in the figure, the voltage and current expressions are
+	\begin{align*}
+		&v\brak{t}=E_1\sin{\omega t}+E_3\sin{3\omega t}\\
+		&i\brak{t}=I_1\sin{\omega t-\phi_1}+I_3\sin{3\omega t-\phi_3}+I_5\sin{5\omega t}
+	\end{align*}
+\begin{figure}[!ht]
+\centering
+\begin{circuitikz}
+\draw (6.25,9.75) to[american voltage source,l={ \LARGE v(t)}] (6.25,6);
+\draw (6.25,9.75) to[short] (8.75,9.75);
+\draw (8.75,9.75) to[short] (8.75,8.5);
+\draw (8.75,8.5) to[L ] (10,8.5);
+\draw (10,8.5) to[R] (11.25,8.5);
+\draw (8.75,9.75) to[L ] (11.25,9.75);
+\draw (11.25,9.75) to[short] (13.75,9.75);
+\draw (13.75,9.75) to[european resistor,l={ \normalsize Load}] (13.75,6);
+\draw (11.25,8.5) to[short] (11.25,6);
+\draw (13.75,6) to[short] (6.25,6);
+\node [font=\normalsize] at (12.5,10) {i(t)};
+\draw [ dashed] (10,9) circle (1.5cm);
+\node [font=\normalsize] at (9.5,11) {Wattmeter};
+\end{circuitikz}
+\end{figure}
+	The average power measured by the wattmeter is
+\begin{enumerate}
+    \begin{multicols}{2}
+	\item $\frac{1}{2}E_1I_1\cos{\phi_1}$
+        \columnbreak
+	\item $\frac{1}{2}\sbrak{E_1I_1\cos{\phi_1}+E_1I_3\cos{\phi_3}+E_1I_5}$
+    \end{multicols}
+    \begin{multicols}{2}
+        \item $\frac{1}{2}\sbrak{E_1I_1\cos{\phi_1}+E_3I_3\cos{\phi_3}}$ 
+        \columnbreak
+        \item $\frac{1}{2}\sbrak{E_1I_1\cos{\phi_1}+E_3I_1\cos{\phi_1}}$
+    \end{multicols}
+\end{enumerate}
+\item Given that
+	\begin{align*}
+		\vec{A}=\myvec{-5&-3\\2&0},\vec{I}=\myvec{1&0\\0&1}
+	\end{align*}
+	the value of $\vec{A}^3$ is
+\begin{enumerate}
+    \begin{multicols}{2}
+	\item $15\vec{A}+12\vec{I}$
+        \columnbreak
+        \item $19\vec{A}+30\vec{I}$
+    \end{multicols}
+    \begin{multicols}{2}
+        \item $17\vec{A}+15\vec{I}$
+        \columnbreak
+        \item $17\vec{A}+21\vec{I}$
+    \end{multicols}
+\end{enumerate}
+\end{enumerate}
+\end{document}
