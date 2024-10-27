@@ -1,0 +1,26 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+\begin{document}
+\centering
+	\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw (3.25,16) to[sinusoidal voltage source, sources/symbol/rotate=auto] (4,16);
+\draw [ color={rgb,255:red,255; green,250; blue,250} ] (9.75,15) rectangle (11.75,15);
+\draw [->, >=Stealth] (4,16) -- (4.5,16);
+\draw [short] (4.5,16.75) -- (4.5,15.25);
+\draw [short] (4.5,16) -- (8.75,16);
+\draw [short] (8.75,16.75) -- (8.75,15.25);
+\draw (9.25,16.5) to[sinusoidal voltage source, sources/symbol/rotate=auto] (10,16.5);
+\draw [->, >=Stealth] (9.25,16.5) -- (8.75,16.5);
+\draw [short] (8.75,15.5) -- (9.25,15.5);
+\draw [->, >=Stealth] (9.25,15.5) -- (9.25,13.75);
+\node [font=\normalsize] at (9,13.25) {$P_D=40MW$};
+\node [font=\normalsize] at (8.75,17) {$Bus 2$};
+\node [font=\normalsize] at (4.5,17) {$Bus 1$};
+\node [font=\normalsize] at (4,15.5) {$P_{G1}$};
+\node [font=\normalsize] at (3.25,16.5) {$G_1$};
+\node [font=\normalsize] at (10.25,17) {$G_2$};
+\node [font=\normalsize] at (9.25,16) {$P_{G2}$};
+\end{circuitikz}
+\end{document}
+

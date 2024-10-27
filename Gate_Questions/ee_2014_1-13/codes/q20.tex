@@ -1,0 +1,38 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+\begin{document}
+\centering
+\begin{circuitikz}
+\draw (3.75,16) to[short, -o] (2.5,16) ;
+\draw (3.75,14.75) to[short, -o] (2.5,14.75) ;
+\draw (3.75,13) to[short, -o] (2.5,13) ;
+\draw (3.75,15.5) to[short] (3.75,14.75);
+\draw (3.75,13.5) to[short, -o] (3.75,14.75) ;
+\draw (3.75,16) to[short] (4,16);
+\draw (3.75,15.5) to[short] (4,15.5);
+\draw (4,16) node[ieeestd nand port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (5.75,15.75);
+\draw (3.75,13.5) to[short] (4,13.5);
+\draw (3.75,13) to[short] (4,13);
+\draw (4,13.5) node[ieeestd nand port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (5.75,13.25);
+\draw (5.75,15.75) to[short] (7.5,15.75);
+\draw (7.5,15.75) to[short] (7.75,15.75);
+\draw (7.5,15.25) to[short] (7.75,15.25);
+\draw (7.75,15.75) node[ieeestd nand port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (9.5,15.5);
+\draw (5.75,13.25) to[short] (7,13.25);
+\draw (7,13.75) to[short] (7.75,13.75);
+\draw (7,13.25) to[short] (7.75,13.25);
+\draw (7.75,13.75) node[ieeestd nand port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (10,13.5);
+\draw (7,13.75) to[short] (7,14.25);
+\draw (7,14.25) to[short] (10,14.25);
+\draw (10,14.25) to[short] (10,15.5);
+\draw (9.5,15.5) to[short] (10,15.5);
+\draw (7.5,15.25) to[short] (7.5,14.75);
+\draw (7.5,14.75) to[short] (10.5,14.75);
+\draw (10.5,14.75) to[short] (10.5,13.5);
+\draw (10.5,13.5) to[short] (10,13.5);
+\node [font=\normalsize] at (2,16) {A};
+\node [font=\normalsize] at (2,14.75) {CLK};
+\node [font=\normalsize] at (2,13) {B};
+\end{circuitikz}
+\end{document}
+

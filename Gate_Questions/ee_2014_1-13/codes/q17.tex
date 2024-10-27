@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+\begin{document}
+\centering
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw (6.25,16) to[C,l={ \normalsize $C_1$}] (6.25,12.25);
+\draw (6.25,12.25) to[short] (10,12.25);
+\draw (10,16) to[C,l={ \normalsize $C_2$}] (10,12.25);
+\draw (6.25,16) to[closing switch,l={ \normalsize t=0}] (10,16);
+\node [font=\normalsize] at (7.75,14) {$i(t)$};
+\draw [->, >=Stealth] (7.25,15) .. controls (8.5,15.25) and (9.25,14.75) .. (8.5,13.25) ;
+\end{circuitikz}
+\end{document}
+

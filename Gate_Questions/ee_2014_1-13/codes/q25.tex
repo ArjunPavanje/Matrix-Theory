@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+\begin{document}
+\centering
+\begin{circuitikz}
+\draw (6.25,9.75) to[american voltage source,l={ \LARGE v(t)}] (6.25,6);
+\draw (6.25,9.75) to[short] (8.75,9.75);
+\draw (8.75,9.75) to[short] (8.75,8.5);
+\draw (8.75,8.5) to[L ] (10,8.5);
+\draw (10,8.5) to[R] (11.25,8.5);
+\draw (8.75,9.75) to[L ] (11.25,9.75);
+\draw (11.25,9.75) to[short] (13.75,9.75);
+\draw (13.75,9.75) to[european resistor,l={ \normalsize Load}] (13.75,6);
+\draw (11.25,8.5) to[short] (11.25,6);
+\draw (13.75,6) to[short] (6.25,6);
+\node [font=\normalsize] at (12.5,10) {i(t)};
+\draw [ dashed] (10,9) circle (1.5cm);
+\node [font=\normalsize] at (9.5,11) {Wattmeter};
+\end{circuitikz}
+\end{document}
+
