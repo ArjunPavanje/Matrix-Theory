@@ -98,18 +98,11 @@
     \end{multicols}
 \end{enumerate}
 \item In the following figure, $C_1$ and $C_2$ are ideal capacitors. $C_1$ has been charged to $12V$ before the ideal switch $S$ is closed at $t=0$. The current $i\brak{t}$ for all $t$ is
-\begin{figure}[!ht]
-\centering
-\begin{circuitikz}
-\tikzstyle{every node}=[font=\normalsize]
-\draw (6.25,16) to[C,l={ \normalsize $C_1$}] (6.25,12.25);
-\draw (6.25,12.25) to[short] (10,12.25);
-\draw (10,16) to[C,l={ \normalsize $C_2$}] (10,12.25);
-\draw (6.25,16) to[closing switch,l={ \normalsize t=0}] (10,16);
-\node [font=\normalsize] at (7.75,14) {$i(t)$};
-\draw [->, >=Stealth] (7.25,15) .. controls (8.5,15.25) and (9.25,14.75) .. (8.5,13.25) ;
-\end{circuitikz}
-\end{figure}
+\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.75]{figs/q17.png}
+			\label{stemplot}
+		\end{figure}
 	\begin{enumerate}
     \begin{multicols}{2}
         \item zero
@@ -129,15 +122,11 @@
 		0A, v<0.7V
 	\end{cases}
 	\end{align*}
-\begin{figure}[!ht]
-\centering
-		\begin{circuitikz}
-\draw (6.25,14.75) to[battery1,l=$10V$] (6.25,11);
-\draw (6.25,14.75) to[R,l={ \normalsize 1k$\Omega$}] (10,14.75);
-\draw (10,14.75) to[D, l={ \normalsize v}] (10,11);
-\draw (6.25,11) to[short] (10,11);
-\end{circuitikz}
-\end{figure}	\\
+\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.75]{figs/q18.png}
+			\label{stemplot}
+		\end{figure}
 		The current in the circuit is,
 	\begin{enumerate}
     \begin{multicols}{2}
@@ -165,41 +154,11 @@
     \end{multicols}
 \end{enumerate}
 \item Consider the given circuit,\\
-\begin{figure}[!ht]
-\centering
-\begin{circuitikz}
-\draw (3.75,16) to[short, -o] (2.5,16) ;
-\draw (3.75,14.75) to[short, -o] (2.5,14.75) ;
-\draw (3.75,13) to[short, -o] (2.5,13) ;
-\draw (3.75,15.5) to[short] (3.75,14.75);
-\draw (3.75,13.5) to[short, -o] (3.75,14.75) ;
-\draw (3.75,16) to[short] (4,16);
-\draw (3.75,15.5) to[short] (4,15.5);
-\draw (4,16) node[ieeestd nand port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (5.75,15.75);
-\draw (3.75,13.5) to[short] (4,13.5);
-\draw (3.75,13) to[short] (4,13);
-\draw (4,13.5) node[ieeestd nand port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (5.75,13.25);
-\draw (5.75,15.75) to[short] (7.5,15.75);
-\draw (7.5,15.75) to[short] (7.75,15.75);
-\draw (7.5,15.25) to[short] (7.75,15.25);
-\draw (7.75,15.75) node[ieeestd nand port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (9.5,15.5);
-\draw (5.75,13.25) to[short] (7,13.25);
-\draw (7,13.75) to[short] (7.75,13.75);
-\draw (7,13.25) to[short] (7.75,13.25);
-\draw (7.75,13.75) node[ieeestd nand port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (10,13.5);
-\draw (7,13.75) to[short] (7,14.25);
-\draw (7,14.25) to[short] (10,14.25);
-\draw (10,14.25) to[short] (10,15.5);
-\draw (9.5,15.5) to[short] (10,15.5);
-\draw (7.5,15.25) to[short] (7.5,14.75);
-\draw (7.5,14.75) to[short] (10.5,14.75);
-\draw (10.5,14.75) to[short] (10.5,13.5);
-\draw (10.5,13.5) to[short] (10,13.5);
-\node [font=\normalsize] at (2,16) {A};
-\node [font=\normalsize] at (2,14.75) {CLK};
-\node [font=\normalsize] at (2,13) {B};
-\end{circuitikz}
-	\end{figure}\\
+\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.75]{figs/q20.png}
+			\label{stemplot}
+		\end{figure}
 	In this circuit, the race around 
 	\begin{enumerate}
     \begin{multicols}{2}
@@ -214,29 +173,12 @@
     \end{multicols}
 \end{enumerate}
 \item The figure shoes a two-generator system supplying a load of $P_D=40MW$, connected at bus $2$\\
-\begin{figure}[!ht]
-\centering
-	\begin{circuitikz}
-\tikzstyle{every node}=[font=\normalsize]
-\draw (3.25,16) to[sinusoidal voltage source, sources/symbol/rotate=auto] (4,16);
-\draw [ color={rgb,255:red,255; green,250; blue,250} ] (9.75,15) rectangle (11.75,15);
-\draw [->, >=Stealth] (4,16) -- (4.5,16);
-\draw [short] (4.5,16.75) -- (4.5,15.25);
-\draw [short] (4.5,16) -- (8.75,16);
-\draw [short] (8.75,16.75) -- (8.75,15.25);
-\draw (9.25,16.5) to[sinusoidal voltage source, sources/symbol/rotate=auto] (10,16.5);
-\draw [->, >=Stealth] (9.25,16.5) -- (8.75,16.5);
-\draw [short] (8.75,15.5) -- (9.25,15.5);
-\draw [->, >=Stealth] (9.25,15.5) -- (9.25,13.75);
-\node [font=\normalsize] at (9,13.25) {$P_D=40MW$};
-\node [font=\normalsize] at (8.75,17) {$Bus 2$};
-\node [font=\normalsize] at (4.5,17) {$Bus 1$};
-\node [font=\normalsize] at (4,15.5) {$P_{G1}$};
-\node [font=\normalsize] at (3.25,16.5) {$G_1$};
-\node [font=\normalsize] at (10.25,17) {$G_2$};
-\node [font=\normalsize] at (9.25,16) {$P_{G2}$};
-\end{circuitikz}\end{figure}\\
-The fuel costs of generators $G_1$, $G_2$ are:\\
+\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.75]{figs/q21.png}
+			\label{stemplot}
+		\end{figure}
+	The fuel costs of generators $G_1$, $G_2$ are:\\
 $C_1\brak{P_{G1}}=10,000Rs/MWh$ and $C_2\brak{P_{G2}}=12,500Rs/MWh$\\
 and the loss in the line $P_{loss\brak{pu}}=0.5P_{G1\brak{pu}}^2$, where the loss coeffecient is specified in pu on a $100MVA$ base.  The most economic power generation schedule in $MW$ is,
 	\begin{enumerate}
@@ -296,24 +238,11 @@ and the loss in the line $P_{loss\brak{pu}}=0.5P_{G1\brak{pu}}^2$, where the los
 		&v\brak{t}=E_1\sin{\omega t}+E_3\sin{3\omega t}\\
 		&i\brak{t}=I_1\sin{\omega t-\phi_1}+I_3\sin{3\omega t-\phi_3}+I_5\sin{5\omega t}
 	\end{align*}
-\begin{figure}[!ht]
-\centering
-\begin{circuitikz}
-\draw (6.25,9.75) to[american voltage source,l={ \LARGE v(t)}] (6.25,6);
-\draw (6.25,9.75) to[short] (8.75,9.75);
-\draw (8.75,9.75) to[short] (8.75,8.5);
-\draw (8.75,8.5) to[L ] (10,8.5);
-\draw (10,8.5) to[R] (11.25,8.5);
-\draw (8.75,9.75) to[L ] (11.25,9.75);
-\draw (11.25,9.75) to[short] (13.75,9.75);
-\draw (13.75,9.75) to[european resistor,l={ \normalsize Load}] (13.75,6);
-\draw (11.25,8.5) to[short] (11.25,6);
-\draw (13.75,6) to[short] (6.25,6);
-\node [font=\normalsize] at (12.5,10) {i(t)};
-\draw [ dashed] (10,9) circle (1.5cm);
-\node [font=\normalsize] at (9.5,11) {Wattmeter};
-\end{circuitikz}
-\end{figure}
+\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.75]{figs/q25.png}
+			\label{stemplot}
+		\end{figure}
 	The average power measured by the wattmeter is
 \begin{enumerate}
     \begin{multicols}{2}

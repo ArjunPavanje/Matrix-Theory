@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.9.6)  27 OCT 2024 02:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.9.6)  27 OCT 2024 19:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1711,14 +1711,23 @@ LaTeX Font Info:    Trying to load font information for OT1+txr on input line 4
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
-) (./main.aux)
+) (./main.aux
+
+LaTeX Warning: Label `stemplot' multiply defined.
+
+
+LaTeX Warning: Label `stemplot' multiply defined.
+
+
+LaTeX Warning: Label `stemplot' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 40.
 LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
 40.
-
-(/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 40.
@@ -1939,41 +1948,89 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--89
 m/it/10 !$ \OT1/txr/m/n/10 by a cur-rent
  []
 
+<figs/q17.png, id=31, 147.05539pt x 127.8095pt>
+File: figs/q17.png Graphic file (type png)
+<use figs/q17.png>
+Package pdftex.def Info: figs/q17.png  used on input line 103.
+(pdftex.def)             Requested size: 110.29126pt x 95.85687pt.
+<figs/q18.png, id=32, 138.50948pt x 126.7144pt>
+File: figs/q18.png Graphic file (type png)
+<use figs/q18.png>
+Package pdftex.def Info: figs/q18.png  used on input line 127.
+(pdftex.def)             Requested size: 103.88184pt x 95.03554pt.
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-
 dist/fonts/enc/dvips/base/8r.enc}
 
-] [2]
-Underfull \hbox (badness 1728) in paragraph at lines 254--256
+ <./figs/q17.png>]
+<figs/q20.png, id=83, 256.00644pt x 100.2927pt>
+File: figs/q20.png Graphic file (type png)
+<use figs/q20.png>
+Package pdftex.def Info: figs/q20.png  used on input line 159.
+(pdftex.def)             Requested size: 192.00435pt x 75.21931pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--161
+
+ []
+
+[2 <./figs/q18.png> <./figs/q20.png>]
+<figs/q21.png, id=118, 251.5558pt x 121.69666pt>
+File: figs/q21.png Graphic file (type png)
+<use figs/q21.png>
+Package pdftex.def Info: figs/q21.png  used on input line 178.
+(pdftex.def)             Requested size: 188.66638pt x 91.27226pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--180
+
+ []
+
+
+Underfull \hbox (badness 1728) in paragraph at lines 196--198
 []\OT1/txr/m/n/10 The se-quence of com-po-nents in a fault cur-rent are as fol-
 lows: $\OML/txmi/m/it/10 I[] \OT1/txr/m/n/10 =
  []
 
-[3] [4] [5] (./main.aux)
+[3 <./figs/q21.png>]
+<figs/q25.png, id=164, 257.35347pt x 149.21347pt>
+File: figs/q25.png Graphic file (type png)
+<use figs/q25.png>
+Package pdftex.def Info: figs/q25.png  used on input line 243.
+(pdftex.def)             Requested size: 193.01462pt x 111.9098pt.
+ [4 <./figs/q25.png>] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 54702 strings out of 474222
- 1304662 string characters out of 5748734
- 1965975 words of memory out of 5000000
- 76064 multiletter control sequences out of 15000+600000
- 625915 words of font info for 173 fonts, out of 8000000 for 9000
+ 53069 strings out of 474222
+ 1256203 string characters out of 5748734
+ 1944975 words of memory out of 5000000
+ 74434 multiletter control sequences out of 15000+600000
+ 624599 words of font info for 171 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 109i,14n,109p,1194b,1282s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
-w/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (5 pages, 62069 bytes).
+ 109i,14n,109p,1194b,1134s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txex
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (4 pages, 128940 bytes).
 PDF statistics:
- 179 PDF objects out of 1000 (max. 8388607)
- 140 compressed objects within 2 object streams
- 76 named destinations out of 1000 (max. 500000)
- 109 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 255 PDF objects out of 1000 (max. 8388607)
+ 193 compressed objects within 2 object streams
+ 75 named destinations out of 1000 (max. 500000)
+ 134 words of extra memory for PDF output out of 10000 (max. 10000000)
 

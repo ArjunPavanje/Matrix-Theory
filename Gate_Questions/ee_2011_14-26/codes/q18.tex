@@ -1,0 +1,12 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+\begin{document}
+\centering
+\begin{circuitikz}
+\draw (6.25,14.75) to[battery1,l=$10V$] (6.25,11);
+\draw (6.25,14.75) to[R,l={ \normalsize 1k$\Omega$}] (10,14.75);
+\draw (10,14.75) to[D, l={ \normalsize v}] (10,11);
+\draw (6.25,11) to[short] (10,11);
+\end{circuitikz}
+\end{document}
+
