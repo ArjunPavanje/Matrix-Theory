@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+\begin{document}
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw (5,16) to[R,l={ \normalsize 4$\Omega$}] (7.5,16);
+\draw (7.5,16) to[R,l={ \normalsize 6$\Omega$ }] (10,16);
+\draw (5,14.75) to[R,l={ \normalsize 5$\Omega$}] (10,14.75);
+\draw (10,14.75) to[short] (10,16);
+\draw (5,14.75) to[short] (5,16);
+\draw (5,15.5) to[short] (2.75,15.5);
+\draw (10,15.5) to[short] (12,15.5);
+\end{circuitikz}
+
+\end{document}
+

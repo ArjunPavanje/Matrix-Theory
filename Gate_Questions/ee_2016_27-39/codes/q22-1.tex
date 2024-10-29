@@ -1,0 +1,34 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+\begin{document}
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+%\draw (6.25,15.5) to[short] (6.5,15.5);
+%\draw (6.625,15) to[short] (6.625,16);
+\draw (6.375,16) to[short] (3.75,16);
+\draw (3.75,16) to[american voltage source,l={ \normalsize $V_g$}] (3.75,9.75);
+\draw (11.25,9.75) to[D,l={ \normalsize $D$}] (11.25,16);
+\draw (11.25,16) to[L,l={ \normalsize $V_l$} ] (15,16);
+\draw (15,16) to[C,l={ \normalsize $C$}] (15,9.75);
+\draw (17.5,16) to[R,l={ \normalsize $R$}] (17.5,9.75);
+\draw (15,16) to[short] (17.5,16);
+\draw (3.75,9.75) to[short] (17.5,9.75);
+\draw [short] (6.25,15) -- (6.5,15);
+\draw [short] (6.75,15) -- (7,15);
+\draw [short] (7.25,15) -- (7.5,15);
+\draw [short] (6.25,14.75) -- (7.5,14.75);
+\draw [short] (7.5,14.75) -- (7.5,14.5);
+\draw [short] (6.375,15) -- (6.375,16);
+\draw [short] (7.375,15) -- (7.375,16);
+\draw [short] (7.25,16) -- (11.25,16);
+\draw [->, >=Stealth] (6.875,16) -- (6.875,15);
+\draw [short] (6.875,16) -- (7.5,16);
+\node [font=\normalsize] at (16.75,12.75) {$V_0$};
+\draw [->, >=Stealth] (16.75,13.25) -- (16.75,15.5);
+\draw [->, >=Stealth] (16.75,12.5) -- (16.75,10);
+\draw [->, >=Stealth] (13.5,16.75) -- (15,16.75);
+\draw [->, >=Stealth] (12.75,16.75) -- (11.25,16.75);
+\end{circuitikz}
+
+\end{document}
+

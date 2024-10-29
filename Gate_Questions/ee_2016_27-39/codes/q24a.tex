@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+\begin{document}
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\large]
+\draw [->, >=Stealth] (3.75,13.5) -- (11.25,13.5);
+\draw [->, >=Stealth] (5,12.25) -- (5,18.5);
+\draw [->, >=Stealth] (3.75,14.75) -- (3.75,16);
+\node [font=\normalsize] at (3.75,16.5) {i};
+\node [font=\normalsize] at (11.5,13.5) {t};
+\draw [short] (5,16) -- (10.75,16);
+\node [font=\large] at (11.5,16) {10A};
+\end{circuitikz}
+
+\end{document}
+

@@ -1,0 +1,18 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+\begin{document}
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\large]
+\draw [->, >=Stealth] (3.75,14.75) -- (11.5,14.75);
+\draw [->, >=Stealth] (5,13.5) -- (5,19.75);
+\draw [line width=2pt, short] (5,14.75) -- (6.25,14.75);
+\draw [line width=2pt, short] (6.25,14.75) -- (7.5,19.5);
+\draw [dashed] (6.25,14.25) -- (6.25,15.5);
+\node [font=\large] at (11,14.25) {$V_S(Volt)$};
+\node [font=\large] at (4.75,20.25) {$I_S(A)$};
+\node [font=\large] at (8.5,18) {$\frac{dV}{dI}=0.02\Omega$};
+\node [font=\large] at (5.75,16.25) {$V_0=1V$};
+\end{circuitikz}
+
+\end{document}
+

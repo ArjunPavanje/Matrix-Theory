@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+\begin{document}
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\large]
+\draw (6.25,12.25) to[short] (6.25,13.25);
+\draw [ line width=2pt](6.5,12.25) to[short] (6.5,13.25);
+\draw (6.5,12.75) to[short] (7,13.25);
+\draw (7,13.25) to[short] (7,15.25);
+\draw [->, >=Stealth] (6.5,12.5) -- (7,12);
+\draw [short] (7,12) -- (7,9.75);
+\draw [short] (7,14) -- (7.5,14);
+\draw (7.5,11) to[D] (7.5,14);
+\draw (7,11) to[short] (7.5,11);
+\draw  (7,12.5) ellipse (1.5cm and 2.5cm);
+\draw [->, >=Stealth] (7.5,8.5) -- (7.5,9.75);
+\node [font=\large] at (8,9) {100A};
+\end{circuitikz}
+
+\end{document}
+

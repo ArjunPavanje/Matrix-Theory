@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+\begin{document}
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw [->, >=Stealth] (3.75,13.5) -- (12.5,13.5);
+\draw [->, >=Stealth] (5,12.25) -- (5,18.5);
+\draw [->, >=Stealth] (3.75,14.75) -- (3.75,16);
+\node [font=\normalsize] at (3.75,16.5) {i};
+\node [font=\normalsize] at (13,13.5) {t};
+\node [font=\normalsize] at (6.5,16.5) {10A};
+\node [font=\normalsize] at (9.75,11.75) {-10A};
+\node [font=\normalsize] at (9.5,14.75) {T=25ms};
+\draw [<->, >=Stealth] (8.5,14.25) -- (11.25,14.25);
+\node [font=\normalsize] at (6.5,12.25) {T=25ms};
+\draw [<->, >=Stealth] (5.25,12.75) -- (8.25,12.75);
+\draw [short] (5,13.5) .. controls (6,16.25) and (7,17.25) .. (8.25,13.5);
+\draw [short] (8.25,13.5) .. controls (9.75,9.25) and (11,11.25) .. (11.5,13.5);
+\end{circuitikz}
+\end{document}
+
