@@ -1866,13 +1866,7 @@ or `english'. on input line 39.
 \scratchcounter=\count393
 \scratchdimen=\dimen392
 \scratchbox=\box141
-\nofMPsegments=\count394
-\nofMParguments=\count395
-\everyMPshowfont=\toks56
-\MPscratchCnt=\count396
-\MPscratchDim=\dimen393
-\MPnumerator=\count397
-\makeMPintoPDFobject=\count398
+\nofMPsegments=\c398
 \everyMPtoPDFconversion=\toks57
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1952,29 +1946,35 @@ Package pdftex.def Info: figs/fig36.png  used on input line 70.
 -dist/fonts/enc/dvips/base/8r.enc}
 
  <./figs/fig36.png>]
-<figs/fig39(1).png, id=68, 767.86874pt x 681.54625pt>
-File: figs/fig39(1).png Graphic file (type png)
-<use figs/fig39(1).png>
-Package pdftex.def Info: figs/fig39(1).png  used on input line 125.
-(pdftex.def)             Requested size: 383.93343pt x 340.7723pt.
 
-Overfull \hbox (19.73813pt too wide) in paragraph at lines 125--127
- [][] 
- []
+! LaTeX Error: Something's wrong--perhaps a missing \item.
 
-<figs/fig39(2).png, id=70, 384.51253pt x 128.43684pt>
-File: figs/fig39(2).png Graphic file (type png)
-<use figs/fig39(2).png>
-Package pdftex.def Info: figs/fig39(2).png  used on input line 131.
-(pdftex.def)             Requested size: 288.38368pt x 96.32738pt.
-[2 <./figs/fig39(1).png>] [3 <./figs/fig39(2).png>] [4]
-<figs/fig50.png, id=146, 236.3711pt x 85.03067pt>
-File: figs/fig50.png Graphic file (type png)
-<use figs/fig50.png>
-Package pdftex.def Info: figs/fig50.png  used on input line 296.
-(pdftex.def)             Requested size: 236.37051pt x 85.03046pt.
- [5 <./figs/fig50.png>]
-[6] (./main.aux)
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.97 		\item  $
+               \frac{4}{\pi}\cos\brak{\frac{\pi t}{T}-\frac{\pi}{4}}$
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.97 		\item  $
+               \frac{4}{\pi}\cos\brak{\frac{\pi t}{T}-\frac{\pi}{4}}$
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ 
+Here is how much of TeX's memory you used:
+ 52972 strings out of 474222
+ 1255227 string characters out of 5748734
+ 1942975 words of memory out of 5000000
+ 74402 multiletter control sequences out of 15000+600000
+ 622251 words of font info for 168 fonts, out of 8000000 for 9000
+ 1144 hyphenation exceptions out of 8191
+ 109i,14n,109p,1194b,1131s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!
+ux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>

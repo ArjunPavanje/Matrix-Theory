@@ -1937,51 +1937,42 @@ File: ts1txr.fd 2000/12/15 v3.1
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2023/02/27 1.9 listings language file
 )
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
-
- []
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-
-dist/fonts/enc/dvips/base/8r.enc}
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 131--132
-
- []
-
-LaTeX Font Info:    Trying to load font information for OML+txr on input line 1
-57.
-(/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxr.fd
-File: omltxr.fd 2000/12/15 v3.1
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2023/02/27 1.9 listings language file
 )
-LaTeX Font Info:    Font shape `OML/txr/m/n' in size <10> not available
-(Font)              Font shape `OML/txmi/m/it' tried instead on input line 157.
 
- [2]
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-)
-LaTeX Font Info:    Trying to load font information for OMS+txr on input line 2
-20.
+! Package Listings Error: Couldn't load requested language.
 
-(/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxr.fd
-File: omstxr.fd 2000/12/15 v3.1
-)
-LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 220.
- [3]
-Underfull \hbox (badness 10000) in paragraph at lines 260--262
+See the Listings package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.96 \begin{lstlisting}[language=Fortran 90]
+                                            
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.96 \begin{lstlisting}[language=Fortran 90]
+                                            
+The following languages weren't loadable:
+    ,fortran90$
+This may cause errors in the sequel.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 260--262
+ 
+Here is how much of TeX's memory you used:
+ 52951 strings out of 474222
+ 1255345 string characters out of 5748734
+ 1977088 words of memory out of 5000000
+ 74401 multiletter control sequences out of 15000+600000
+ 613917 words of font info for 155 fonts, out of 8000000 for 9000
+ 1144 hyphenation exceptions out of 8191
+ 109i,3n,109p,1194b,533s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!
+box (badness 10000) in paragraph at lines 260--262
 
  []
 
