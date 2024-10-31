@@ -1,0 +1,148 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+\usepackage{float}
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{listings}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+	
+\title{AE 2008 40-52}
+\author{EE24BTECH11005 - Arjun Pavanje}
+% \maketitle
+% \newpage
+% \bigskip
+
+{\let\newpage\relax\maketitle}
+\begin{enumerate}
+\setcounter{enumi}{39}
+		\item A clamped-clamped beam, subjected to a point load $P$ at the midspan, is shown in the figure below. The magnitude of the moment reaction at the two fixed ends of the beam is
+\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.75]{figs/q30.png}
+\end{figure}
+		\begin{enumerate}
+				\begin{multicols}{2}
+				\item $\frac{PL}{2}$
+						\columnbreak
+					\item $\frac{PL}{4}$
+				\end{multicols}
+				\begin{multicols}{2}
+				\item $\frac{PL}{8}$
+				\columnbreak
+			\item $\frac{PL}{16}$
+				\end{multicols}
+		\end{enumerate}
+	\item Which of the following statement(s) is/are true about the state of a body in plane strain condition?\\
+		$P:$ All the points in the body undergo displacements in one plane only, for example the $x-y$ plane, leading to $\varepsilon_{zz} = \gamma_{xz}=\gamma_{yz}=0$.\\
+		$Q:$ All the components of stress perpendicular to the plane of deformation, for example the $x-y$ plane, of the body are equal to zero, i.e. $\sigma_{zz}= \tau{xz}=\tau{yz}=0$\\ 
+		$R:$ Except the normal component, all the other components of stress perpendicular to the plane of deformation of the body, for example the $x-y$ plane, are equal to zero, i.e. $\sigma_{zz} \ne 0, \tau_{sz}=\tau_{yz}=0$. 
+				\begin{enumerate}
+				\begin{multicols}{2}
+			\item $P$ only
+				\columnbreak
+			\item $Q$ only
+				\end{multicols}
+				\begin{multicols}{2}
+				\item $P$ and $Q$
+					\columnbreak
+				\item $P$ and $R$ 
+				\end{multicols}
+		\end{enumerate}
+	\item An aircraft with a turbojet engine flies at a velocity of $100 m/s$. If the jet exhaust velocity is $300 m/s$, the propulsive efficiency of the engine, assuming a negligible fuel-air ratio, is
+	\begin{enumerate}
+	\begin{multicols}{2}
+		\item  $0.33$
+		 \columnbreak
+		\item  $0.50$
+    \end{multicols}
+    \begin{multicols}{2}
+	\item $0.67$ 
+    \columnbreak
+\item $0.80$
+    \end{multicols}
+\end{enumerate}
+\item An axial compressor that generates a stagnation pressure ratio of $4.0$, operates with inlet and exit stagnation temperatures of $300 K$ and $480 K$, respectively. If the ratio of specific heats $\gamma$ is $1.4$, the isentropic effeciency of the compressor is,
+	\begin{enumerate}
+    \begin{multicols}{2}
+        \item $0.94$
+    \columnbreak
+        \item $0.81$
+    \end{multicols}
+    \begin{multicols}{2}
+        \item $0.72$
+    \columnbreak
+        \item $0.63$
+    \end{multicols}
+\end{enumerate}
+\item An aircraft with a turboprop engine produces a thrust of $500 N$ and flies at $100 m/s$. If the propeller efficiency is $0.5$, the shaft power produced by the engine is 
+	\begin{enumerate}
+    \begin{multicols}{2}
+	\item $50kW$
+    \columnbreak
+	\item $100kW$ 
+    \end{multicols}
+    \begin{multicols}{2}
+	\item $125kW$
+    \columnbreak
+\item $500kW$
+    \end{multicols}
+\end{enumerate}
+\item A rocket has an initial mass of $150 kg$. After operating for a duration of $10 s$, its final mass is $50 kg$. If the acceleration due to gravity is $9.81 m/s^2$ and the thrust produced by the rocket is $19.62 kN$, the specific impulse of the rocket is
+	\begin{enumerate}
+    \begin{multicols}{2}
+        \item $400s$
+    \columnbreak
+        \item $300s$
+    \end{multicols}
+    \begin{multicols}{2}
+	\item $200s$
+    \columnbreak
+        \item $100s$
+    \end{multicols}
+\end{enumerate}
+\item Consider the vecotr field $\vec{v}=\myvec{-\frac{y}{r^2} \\ \frac{x}{r^2}}$ where $r= \sqrt{x^2+y^2}$. The contour integral $ \oint \vec{v} \cdot \vec{ds}$ where $\vec{ds}$ is tangent to the contour that encloses the origin is, \rule{2cm}{0.2pt} \brak{ \text{accurate to two decimal places}}
+\item The magnitude of the $x$-component of the unit vector at the point $\myvec{1\\1}$ that is normal to equipotential lines of the potential function $\phi\brak{r}=\frac{1}{r^2+4}$, where $r=\sqrt{x^2+y^2}$ is,\brak{	\text{accurate to two decimal places}}
+\item Assuming $ISA$ standard sea level conditions , the density of air $\brak{\text{in } kg/m^3}$ at Leh, which has an altitude of $3500m$ above mean sea level is \rule{2cm}{0.2pt} \brak{\rule{2cm}{0.2pt}\text{accurate to two decimal places}}
+\item Consider a cubical tank of side $2 m$ with its top open. It is filled with water up to a height of $1 m$. Assuming the density of water to be $1000 kg/m^3, g = 9.81 m/s^2$ and the atmospheric pressure to be $100 kPa$, the net hydrostatic force $\brak{\text{in } kN}$ on the side face of the tank due to the air and water is \rule{2cm}{0.2pt} \brak{	\text{accurate to two decimal places}}
+\item An aircraft with mass of $400,000 kg$ cruises at $240 m/s$ at an altitude of $10 km$. Its lift to drag ratio at cruise is $15$. Assuming $g$ as $9.81 m/s^2$ , the power $\brak{\text{in } MW}$ needed for it to cruise is\rule{2cm}{0.2pt} \brak{	\text{accurate to two decimal places}}
+\item A statically-stable aircraft has a $C_{L_{\alpha}}=5$ $\brak{\text{where the angle of attack,} \alpha \text{, is measured in radians}}$. The coefficient of moment of the aircraft about the center of gravity is given as $C_{M,C,g}=0.05-4\alpha$. The mean aerodynamic chord of the aircraft wing is $1 m$. The location \brak{\text{positive towards the nose}} of the neutral point of the aircraft from the center of gravity is \rule{2cm}{0.2pt} \brak{	\text{accurate to two decimal places}}
+
+\item An aircraft with a gross weight of $2000kg$ has a speed of $130m/s$ at sea level, where the conditions are: $1$ atmosphere \brak{pressure}, $288K$ \brak{temperature}, and $1.23 kg/m^3$ \brak{density}. The speed $\brak{\text{in } m/s}$ required by the aircraft at an altitude of $9000m$, where the conditions are: $0.31$ atmosphere, $230K$, and $0.47 kg/m^3$, to maintain a steady, level flight is \rule{2cm}{0.2pt} \brak{	\text{accurate to two decimal places}} 
+	\end{enumerate}
+\end{document}
