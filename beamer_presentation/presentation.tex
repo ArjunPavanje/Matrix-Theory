@@ -158,46 +158,51 @@
 			\frametitle{Codes}
 			C Code:
 			\begin{lstlisting}[language=C, basicstyle=\scriptsize]
-void yparabola_gen(FILE *fptr, double a, double num_points, double **vertex){
-	for(int i=num_points; i>=0; i--){
-		double t = 3*i/num_points;
-		double **output=createMat(2,1);
-		output[1][0]=vertex[0][0]+a*t*t;
-		output[0][0]=vertex[1][0]+2*a*t;
-		fprintf(fptr,"%lf,%lf\n",output[0][0],output[1][0]);
-		freeMat(output,2);
-	}
-	for(int i=0; i<=num_points; i++){
-		double t = -3*i/num_points;
-		double **output=createMat(2,1);
-		output[1][0]=a*t*t;
-		output[0][0]=2*a*t;
-		fprintf(fptr,"%lf,%lf\n",output[0][0],output[1][0]);
-		freeMat(output,2);
-	}
-}
+void parabola_gen(FILE *fptr, double a, double num_points, double **vertex, char type){
+    if(type=='y'){
+        for(int i=num_points;i>=0;i--){
+            double t = 3*i/num_points;
+            double **output=createMat(2,1);
+            output[1][0]=vertex[0][0]+a*t*t;
+            output[0][0]=vertex[1][0]+2*a*t;
+            fprintf(fptr,"%lf,%lf\n",output[0][0],output[1][0]);
+            freeMat(output,2);
+        }
+        for(int i=0;i<=num_points;i++){
+            double t = -3*i/num_points;
+            double **output=createMat(2,1);
+            output[1][0]=a*t*t;
+            output[0][0]=2*a*t;
+            fprintf(fptr,"%lf,%lf\n",output[0][0],output[1][0]);
+            freeMat(output,2);
+        }
+
+    }
+
 			\end{lstlisting}
 		\end{frame}
 		\begin{frame}[fragile]
 			\frametitle{Codes}
 			\begin{lstlisting}[language=C, basicstyle=\scriptsize]
-void xparabola_gen(FILE *fptr, double a, double num_points, double **vertex){
-	for(int i=num_points;i>=0;i--){
-		double t = 3*i/num_points;
-		double **output=createMat(2,1);
-		output[0][0]=vertex[0][0]+a*t*t;
-		output[1][0]=vertex[1][0]+2*a*t;
-		fprintf(fptr,"%lf,%lf\n",output[0][0],output[1][0]);
-		freeMat(output,2);
-	}
-	for(int i=0;i<=num_points;i++){
-		double t = -3*i/num_points;
-		double **output=createMat(2,1);
-		output[0][0]=a*t*t;
-		output[1][0]=2*a*t;
-		fprintf(fptr,"%lf,%lf\n",output[0][0],output[1][0]);
-		freeMat(output,2);
-	}
+    if(type=='x'){
+        for(int i=num_points;i>=0;i--){
+            double t = 3*i/num_points;
+            double **output=createMat(2,1);
+            output[0][0]=vertex[0][0]+a*t*t;
+            output[1][0]=vertex[1][0]+2*a*t;
+            fprintf(fptr,"%lf,%lf\n",output[0][0],output[1][0]);
+            freeMat(output,2);
+        }
+        for(int i=0;i<=num_points;i++){
+            double t = -3*i/num_points;
+            double **output=createMat(2,1);
+            output[0][0]=a*t*t;
+            output[1][0]=2*a*t;
+            fprintf(fptr,"%lf,%lf\n",output[0][0],output[1][0]);
+            freeMat(output,2);
+        }
+
+    }
 }
 			\end{lstlisting}
 		\end{frame}
@@ -219,8 +224,8 @@ int main() {
 		return 1;
 	}
 	double a = 1;
-	yparabola_gen(fptr, a, 1000,vertex);
-	xparabola_gen(fptr, a, 1000,vertex);
+	yparabola_gen(fptr, a, 1000,vertex,'y');
+	xparabola_gen(fptr, a, 1000,vertex,'x');
 	fclose(fptr);
 	return 0;
 	}
