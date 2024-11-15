@@ -28,8 +28,14 @@ int main(){
         {CMPLX(-2, 1), CMPLX(1, -3), CMPLX(3, 0), CMPLX(4, 2)},
         {CMPLX(5, 0), CMPLX(-1, -2), CMPLX(4, -1), CMPLX(3, 1)}
     };
-
-
+   /* double complex matrix[6][6] = {
+        {CMPLX(2, 1), CMPLX(3, 0), CMPLX(5, 0), CMPLX(7, 0), CMPLX(11, 0), CMPLX(13, 0)},
+        {CMPLX(17, 1), CMPLX(19, 0), CMPLX(23, 0), CMPLX(29, 0), CMPLX(31, 0), CMPLX(37, 0)},
+        {CMPLX(41, 1), CMPLX(43, 0), CMPLX(47, 0), CMPLX(53, 0), CMPLX(59, 0), CMPLX(61, 0)},
+        {CMPLX(67, 1), CMPLX(71, 0), CMPLX(73, 0), CMPLX(79, 0), CMPLX(83, 0), CMPLX(89, 0)},
+        {CMPLX(97, 1), CMPLX(101, 0), CMPLX(103, 0), CMPLX(107, 0), CMPLX(109, 0), CMPLX(113, 0)},
+        {CMPLX(127, 1), CMPLX(131, 0), CMPLX(137, 0), CMPLX(139, 0), CMPLX(149, 0), CMPLX(151, 0)}
+    };*/
     printf("Matrix:\n");
     print_matrix(n, n, matrix);
     householder(n, matrix);
@@ -40,7 +46,7 @@ int main(){
         }
         printf("\n");
     }
-    for(int count=0; count<1; count++){
+    for(int count=0; count<1000; count++){
          QR(n, matrix);
     }
     printf("Eigen values:\n");
@@ -220,43 +226,55 @@ void QR(int n, double complex matrix[n][n]){
     }
     for(int i=0; i<n; i++){
         double complex col[n][1];
-        double complex rcol[n][1];
-        for(int j=0; j<n; j++){//'i'th column of R matrix
-            rcol[j][0]=0;
-        }
         getcol(i, n, matrix, col);
         if(i==0){
             double norm=dot_product(n, col, col);
             /*for(int j=0; j<n; j++){
                 norm+=pow(cabs(col[i][0]),2);
             }*/
-            //norm=sqrt(norm);
-            matscale(n, n, col, 1/norm);
-            rcol[0][0]=norm;
+            norm=sqrt(norm);
+            matscale(n, 1, col, 1/norm);
         }
-        rcol[i][0]=dot_product(n, col, col);
         for(int j=0; j<i; j++){
-            double complex e[n][1];
-           
+            double complex e[n][1];           
             getcol(j, n, Q, e);
-            rcol[j][0]=dot_product(n, col,e);
-            matscale(n, n, e, dot_product(n, col, e));
+            //printf("e=\n");
+            //print_matrix(n, 1, e); 
+            //printf("scaling factor is: %lf + %lfj\n", creal(dot_product(n, col, e)), cimag(dot_product(n, col, e)));
+            //matscale(n, 1, e, dot_product(n, e, col));
+            double complex scale=dot_product(n, col, e);
+            for(int k=0; k<n; k++){
+                e[k][0]*=scale;
+            }
+            //printf("scaled e:\n");
+            //print_matrix(n, 1, e);
+            //printf("col:\n");
+            //print_matrix(n, 1, col);
             
             for(int k=0; k<n; k++){
                 col[k][0]-=e[k][0];
             }
         }
-        
-
+        double norm=dot_product(n, col, col);
+        norm=sqrt(norm);
+        matscale(n, 1, col, 1/norm);  
         for(int j=0; j<n; j++){
             Q[j][i]=col[j][0];
-            R[j][i]=rcol[j][0];
         }
+        printf("Q': \n");
+        print_matrix(n, n, Q);
     }
-    printf("Q: \n");
-    print_matrix(n, n, Q);
-    printf("R: \n");
-    print_matrix(n, n, R);
+        /*printf("Q: \n");
+    print_matrix(n, n, Q);*/
+    double complex Qtranspose[n][n];
+    transpose(n, n, Q, Qtranspose);
+    double complex temp[n][n];
+    /*matrix_multiply(n, n, n, Q, Qtranspose, temp);
+    printf("QQT:\n");
+    print_matrix(n, n, temp);*/
+    matrix_multiply(n, n, n, Qtranspose, matrix, temp);
+    matrix_multiply(n, n, n, temp, Q, matrix);
+
     
 }
 void getcol(int j, int n, double complex matrix[n][n], double complex col[n][1]){
@@ -269,5 +287,5 @@ double complex dot_product(int n, double complex a[n][1], double complex b[n][1]
     for(int i=0; i<n; i++){
         dot+= a[i][0]*conj(b[i][0]);
     }
-    return sqrt(dot);
+    return (dot);
 }

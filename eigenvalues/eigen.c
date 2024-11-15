@@ -203,7 +203,7 @@ void upper_triangular(int m, int n, double complex matrix[m][n]){
          givens_rotation(i, i+1, n, n, matrix, Q, R);
     }
     matrix_multiply(n, n, n, R, Q, matrix);
-    /*printf("Q:\n");
+    printf("Q:\n");
     for (int k = 0; k < n; k++) {
         for (int j = 0; j < n; j++) {
             printf("(%lf + %lfi) ", creal(Q[k][j]), cimag(Q[k][j]));
@@ -216,7 +216,7 @@ void upper_triangular(int m, int n, double complex matrix[m][n]){
             printf("(%lf + %lfi) ", creal(R[k][j]), cimag(R[k][j]));
         }
         printf("\n");
-    }*/
+    }
     /*
     double complex verifier[m][n];
     matrix_multiply(n, n, n, Q, R, verifier);

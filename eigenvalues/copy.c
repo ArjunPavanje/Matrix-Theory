@@ -67,7 +67,7 @@ int main(){
             continue;
         }
         double complex b,c;
-        b=(matrix[i][i]+matrix[i+1][i+1]);
+        b=-(matrix[i][i]+matrix[i+1][i+1]);
         c=(matrix[i][i]*matrix[i+1][i+1])-(matrix[i][i+1]*matrix[i+1][i]);
         double complex D= csqrt((b*b)-(4*c));
         eigen_values[i][0]=(-b+D)/2;
@@ -263,6 +263,9 @@ void upper_triangular(int m, int n, double complex matrix[m][n]){
     
 }
 void givens_rotation(int i, int j, int m, int n, double complex matrix[m][n], double complex Q[m][n], double complex R[m][n]){
+    if(matrix[i][i]==0 && matrix[i+1][i]==0){
+        return;
+    }
     double complex G[m][n];//G is initially identity matrix
     /*for(int i=0; i<m; i++){
         for(int j=0;j<n;j++){
