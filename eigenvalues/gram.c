@@ -1,3 +1,4 @@
+#include <linux/limits.h>
 #include <stdio.h>
 #include <complex.h>
 #include <math.h>
@@ -7,10 +8,11 @@ void matscale(int m, int n, double complex matrix[m][n], double k);
 double complex multiply(double complex a, double complex b);
 void matrix_multiply(int m, int p, int n, double complex A[m][p], double complex B[p][n], double complex C[m][n]);
 void transpose(int m, int n, double complex matrix[m][n], double complex transpose[n][m]);
-void upper_triangular(int m, int n, double complex matrix[m][n]);//via givens rotation
-void givens_rotation(int i, int j, int m, int n, double complex matrix[m][n], double complex Q[m][n], double complex R[m][n]);
 void print_matrix(int m, int n, double complex matrix[m][n]);
+void QR(int n, double complex matrix[n][n]);
+void getcol(int j, int n, double complex matrix[n][n], double complex col[n][1]);
 void eye(int n, double complex identity[n][n]);//generating an nxn identity matrix
+double complex dot_product(int n, double complex a[n][1], double complex b[n][1]);
 int main(){
     /*int n=3;
       double complex matrix[n][n];
@@ -26,6 +28,8 @@ int main(){
         {CMPLX(-2, 1), CMPLX(1, -3), CMPLX(3, 0), CMPLX(4, 2)},
         {CMPLX(5, 0), CMPLX(-1, -2), CMPLX(4, -1), CMPLX(3, 1)}
     };
+
+
     printf("Matrix:\n");
     print_matrix(n, n, matrix);
     householder(n, matrix);
@@ -36,8 +40,8 @@ int main(){
         }
         printf("\n");
     }
-    for(int count=0; count<100; count++){
-         upper_triangular(n, n, matrix);
+    for(int count=0; count<1; count++){
+         QR(n, matrix);
     }
     printf("Eigen values:\n");
     for (int i = 0; i < n; i++) {
@@ -52,7 +56,7 @@ int main(){
 }
 void householder(int n, double complex matrix[n][n]){
     //'i' is mumn no. 'i' goes till n-2 because in upper hessenberg form last two ls remain unchanged.
-    for(int i=0;i<n-1;i++){
+    for(int i=0;i<n-2;i++){
         double complex x[n-i-1][1];
         //printf("size: %d\n", n-i-1);
         int count=0;
@@ -188,113 +192,7 @@ void transpose(int m, int n, double complex matrix[m][n], double complex transpo
         }
     }
 }
-void upper_triangular(int m, int n, double complex matrix[m][n]){
-    //Q = identity matrix, R = copy of matrix
 
-    double complex Q[m][n], R[m][n];
-    eye(n, Q);
-    /*for(int i=0;i<m;i++){
-        for(int j=0;j<n;j++){
-            Q[i][j]=(i==j)?CMPLX(1,0):CMPLX(0,0);//Q is 'identity' matrix initially
-            R[i][j]=matrix[i][j];//
-        }
-    }*/
-    for(int i=0;i<n-1;i++){
-         givens_rotation(i, i+1, n, n, matrix, Q, R);
-    }
-    matrix_multiply(n, n, n, R, Q, matrix);
-    /*printf("Q:\n");
-    for (int k = 0; k < n; k++) {
-        for (int j = 0; j < n; j++) {
-            printf("(%lf + %lfi) ", creal(Q[k][j]), cimag(Q[k][j]));
-        }
-        printf("\n");
-    }
-    printf("R:\n");
-    for (int k = 0; k < n; k++) {
-        for (int j = 0; j < n; j++) {
-            printf("(%lf + %lfi) ", creal(R[k][j]), cimag(R[k][j]));
-        }
-        printf("\n");
-    }*/
-    /*
-    double complex verifier[m][n];
-    matrix_multiply(n, n, n, Q, R, verifier);
-
-
-
-
-    printf("For verification purposes:\n");
-    for (int k = 0; k < n; k++) {
-        for (int j = 0; j < n; j++) {
-            printf("(%lf + %lfi) ", creal(verifier[k][j]), cimag(verifier[k][j]));
-        }
-        printf("\n");
-    }*/
-    
-}
-void givens_rotation(int i, int j, int m, int n, double complex matrix[m][n], double complex Q[m][n], double complex R[m][n]){
-    double complex G[m][n];//G is initially identity matrix
-    /*for(int i=0; i<m; i++){
-        for(int j=0;j<n;j++){
-            G[i][j]=(i==j)?CMPLX(1,0):CMPLX(0,0);
-        }
-    }*/
-    eye(n, G);
-    double r=sqrt(pow(cabs(matrix[i][i]),2) + pow(cabs(matrix[i+1][i]),2) );
-    double complex c=conj(matrix[i][i])/r;
-    double complex s=conj(matrix[i+1][i])/r;
-    G[i][i]=c;
-    G[i+1][i+1]=conj(c);
-    G[i+1][i]=-conj(s);
-    G[i][i+1]=s;
-    /*printf("G value:\n");
-    for (int k = 0; k < n; k++) {
-        for (int j = 0; j < n; j++) {
-            printf("(%lf + %lfi) ", creal(G[k][j]), cimag(G[k][j]));
-        }
-        printf("\n");
-    }*/
-    double complex Gtranspose[m][n];
-    transpose(m, n, G, Gtranspose);
-    double complex temp[m][n];
-    matrix_multiply(n, n, n, Q, Gtranspose, temp);
-    matrix_multiply(n, n, n, G, matrix, R);
-    for(int i=0; i<m; i++){
-        for(int j=0;j<n;j++){
-            Q[i][j]=temp[i][j];
-            matrix[i][j]=R[i][j];
-        }
-    }
-    /*printf("Q:\n");
-    for (int k = 0; k < n; k++) {
-        for (int j = 0; j < n; j++) {
-            printf("(%lf + %lfi) ", creal(Q[k][j]), cimag(Q[k][j]));
-        }
-        printf("\n");
-    }
-    printf("R:\n");
-    for (int k = 0; k < n; k++) {
-        for (int j = 0; j < n; j++) {
-            printf("(%lf + %lfi) ", creal(matrix[k][j]), cimag(matrix[k][j]));
-        }
-        printf("\n");
-    }
-    double complex verifier[m][n];
-    matrix_multiply(n, n, n, Gtranspose, R, verifier);
-
-
-
-
-    printf("For verification purposes:\n");
-    for (int k = 0; k < n; k++) {
-        for (int j = 0; j < n; j++) {
-            printf("(%lf + %lfi) ", creal(verifier[k][j]), cimag(verifier[k][j]));
-        }
-        printf("\n");
-    }*/
-
-}
 
 void print_matrix(int m, int n, double complex matrix[m][n]){
     for(int i=0; i<m; i++){
@@ -311,3 +209,59 @@ void eye(int n, double complex identity[n][n]){
         }
     }
 }
+void getcol(int j, int n, double complex matrix[n][n], double complex col[n][1]){
+    for(int i=0; i<n; i++){
+        col[i][0]=matrix[i][j];
+    }
+}
+double complex dot_product(int n, double complex a[n][1], double complex b[n][1]){
+    double complex dot=0;
+    for(int i=0; i<n; i++){
+        dot+= a[i][0]*conj(b[i][0]);
+    }
+    return sqrt(dot);
+}
+void QR(int n, double complex matrix[n][n]) {
+    double complex Q[n][n];
+    double complex R[n][n];
+
+    // Initialize R matrix
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            R[i][j] = CMPLX(0, 0);
+        }
+    }
+
+    // Compute Q and R
+    for (int i = 0; i < n; i++) {
+        double complex col[n][1];
+        getcol(i, n, matrix, col);  // Extract the ith column of matrix
+
+        // Orthogonalize col with respect to previous columns
+        for (int j = 0; j < i; j++) {
+            double complex e[n][1];
+            getcol(j, n, Q, e);  // Get the jth column of Q
+            double complex proj_scale = dot_product(n, col, e);
+            for (int k = 0; k < n; k++) {
+                col[k][0] -= proj_scale * e[k][0];
+            }
+            R[j][i] = proj_scale;  // Update R
+        }
+
+        // Normalize col and update Q and R
+        double norm = sqrt(creal(dot_product(n, col, col)));
+        for (int j = 0; j < n; j++) {
+            Q[j][i] = col[j][0] / norm;
+        }
+        R[i][i] = norm;
+    }
+
+    printf("Q Matrix:\n");
+    print_matrix(n, n, Q);
+    printf("R Matrix:\n");
+    print_matrix(n, n, R);
+
+    // Update original matrix as R * Q for QR iterations
+    matrix_multiply(n, n, n, R, Q, matrix);
+}
+

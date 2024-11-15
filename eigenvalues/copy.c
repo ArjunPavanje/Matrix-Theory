@@ -19,12 +19,20 @@ int main(){
       matrix[i][j]=CMPLX(i,j);
       }
       }*/
-    int n = 4;
-    double complex matrix[4][4] = {
-        {CMPLX(1, -1), CMPLX(2, 3), CMPLX(-1, 4), CMPLX(5, -2)},
-        {CMPLX(3, 2), CMPLX(4, -1), CMPLX(2, 1), CMPLX(-3, 3)},
-        {CMPLX(-2, 1), CMPLX(1, -3), CMPLX(3, 0), CMPLX(4, 2)},
-        {CMPLX(5, 0), CMPLX(-1, -2), CMPLX(4, -1), CMPLX(3, 1)}
+    int n = 6;
+    /*double complex matrix[6][6] = {
+        {CMPLX(1, 0), CMPLX(2, 0), CMPLX(-1, 0), CMPLX(5, -0), CMPLX( , 0)},
+        {CMPLX(3, 0), CMPLX(4, 0), CMPLX(2, 0), CMPLX(-3, 0), CMPLX( , 0)},
+        {CMPLX(-2, 0), CMPLX(1, 0), CMPLX(3, 0), CMPLX(4, 0), CMPLX( , 0)},
+        {CMPLX(5, 0), CMPLX(-1, 0), CMPLX(4, 0), CMPLX(3, 0), CMPLX( , 0)}
+    };*/
+    double complex matrix[6][6] = {
+        {CMPLX(2, 0), CMPLX(3, 0), CMPLX(5, 0), CMPLX(7, 0), CMPLX(11, 0), CMPLX(13, 0)},
+        {CMPLX(17, 0), CMPLX(19, 0), CMPLX(23, 0), CMPLX(29, 0), CMPLX(31, 0), CMPLX(37, 0)},
+        {CMPLX(41, 0), CMPLX(43, 0), CMPLX(47, 0), CMPLX(53, 0), CMPLX(59, 0), CMPLX(61, 0)},
+        {CMPLX(67, 0), CMPLX(71, 0), CMPLX(73, 0), CMPLX(79, 0), CMPLX(83, 0), CMPLX(89, 0)},
+        {CMPLX(97, 0), CMPLX(101, 0), CMPLX(103, 0), CMPLX(107, 0), CMPLX(109, 0), CMPLX(113, 0)},
+        {CMPLX(127, 0), CMPLX(131, 0), CMPLX(137, 0), CMPLX(139, 0), CMPLX(149, 0), CMPLX(151, 0)}
     };
     printf("Matrix:\n");
     print_matrix(n, n, matrix);
@@ -36,18 +44,39 @@ int main(){
         }
         printf("\n");
     }
-    for(int count=0; count<100; count++){
+    for(int count=0; count<200; count++){
          upper_triangular(n, n, matrix);
     }
-    printf("Eigen values:\n");
+    /*printf("Eigen values:\n");
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             if(i==j){
-                printf("(%lf + %lfi) ", creal(matrix[i][j]), cimag(matrix[i][j]));
+                printf("(%e + %ei) ", creal(matrix[i][j]), cimag(matrix[i][j]));
             }
         }
         printf("\n");
+    }*/
+    printf("Matrix:\n");
+    print_matrix(n, n, matrix);
+    double complex eigen_values[n][1];
+    for(int i=0; i<n-1; i++){
+        
+        if(cabs(matrix[i+1][i]) < cabs(CMPLX(pow(10,-10), pow(10, -10)))){
+            printf("column %d normal\n", i+1);
+            eigen_values[i][0]=matrix[i][i];
+            continue;
+        }
+        double complex b,c;
+        b=(matrix[i][i]+matrix[i+1][i+1]);
+        c=(matrix[i][i]*matrix[i+1][i+1])-(matrix[i][i+1]*matrix[i+1][i]);
+        double complex D= csqrt((b*b)-(4*c));
+        eigen_values[i][0]=(-b+D)/2;
+        eigen_values[i+1][0]=(-b-D)/2;
+        i++;
     }
+    eigen_values[n-1][0]=matrix[n-1][n-1];
+    printf("Eigenvalues:\n");
+    print_matrix(n, 1, eigen_values);
     return 0;
 }
 void householder(int n, double complex matrix[n][n]){

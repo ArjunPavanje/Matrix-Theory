@@ -11,7 +11,7 @@ void upper_triangular(int m, int n, double complex matrix[m][n]);//via givens ro
 void givens_rotation(int i, int j, int m, int n, double complex matrix[m][n], double complex Q[m][n], double complex R[m][n]);
 void print_matrix(int m, int n, double complex matrix[m][n]);
 void eye(int n, double complex identity[n][n]);//generating an nxn identity matrix
-int main(){
+int main() {
     /*int n=3;
       double complex matrix[n][n];
       for (int i=0;i<n;i++) {
@@ -21,11 +21,13 @@ int main(){
       }*/
     int n = 4;
     double complex matrix[4][4] = {
-        {CMPLX(1, -1), CMPLX(2, 3), CMPLX(-1, 4), CMPLX(5, -2)},
-        {CMPLX(3, 2), CMPLX(4, -1), CMPLX(2, 1), CMPLX(-3, 3)},
-        {CMPLX(-2, 1), CMPLX(1, -3), CMPLX(3, 0), CMPLX(4, 2)},
-        {CMPLX(5, 0), CMPLX(-1, -2), CMPLX(4, -1), CMPLX(3, 1)}
+        {CMPLX(5, 0), CMPLX(9, 0), CMPLX(3, 0), CMPLX(5, 0)},
+        {CMPLX(3, 0), CMPLX(3, 0), CMPLX(0, 0), CMPLX(2, 0)},
+        {CMPLX(6, 0), CMPLX(2, 0), CMPLX(8, 0), CMPLX(9, 0)},
+        {CMPLX(8, 0), CMPLX(7, 0), CMPLX(1, 0), CMPLX(8, 0)}
     };
+
+
     printf("Matrix:\n");
     print_matrix(n, n, matrix);
     householder(n, matrix);
@@ -36,7 +38,7 @@ int main(){
         }
         printf("\n");
     }
-    for(int count=0; count<100; count++){
+    for(int count=0; count<1000; count++){
          upper_triangular(n, n, matrix);
     }
     printf("Eigen values:\n");
@@ -52,7 +54,7 @@ int main(){
 }
 void householder(int n, double complex matrix[n][n]){
     //'i' is mumn no. 'i' goes till n-2 because in upper hessenberg form last two ls remain unchanged.
-    for(int i=0;i<n-1;i++){
+    for(int i=0;i<n-2;i++){
         double complex x[n-i-1][1];
         //printf("size: %d\n", n-i-1);
         int count=0;
@@ -216,8 +218,8 @@ void upper_triangular(int m, int n, double complex matrix[m][n]){
             printf("(%lf + %lfi) ", creal(R[k][j]), cimag(R[k][j]));
         }
         printf("\n");
-    }*/
-    /*
+    }
+
     double complex verifier[m][n];
     matrix_multiply(n, n, n, Q, R, verifier);
 
