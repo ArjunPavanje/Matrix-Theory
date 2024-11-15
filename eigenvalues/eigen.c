@@ -9,6 +9,8 @@ void matrix_multiply(int m, int p, int n, double complex A[m][p], double complex
 void transpose(int m, int n, double complex matrix[m][n], double complex transpose[n][m]);
 void upper_triangular(int m, int n, double complex matrix[m][n]);//via givens rotation
 void givens_rotation(int i, int j, int m, int n, double complex matrix[m][n], double complex Q[m][n], double complex R[m][n]);
+void print_matrix(int m, int n, double complex matrix[m][n]);
+void eye(int n, double complex identity[n][n]);//generating an nxn identity matrix
 int main() {
     /*int n=3;
       double complex matrix[n][n];
@@ -27,12 +29,7 @@ int main() {
 
 
     printf("Matrix:\n");
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            printf("(%lf + %lfi) ", creal(matrix[i][j]), cimag(matrix[i][j]));
-        }
-        printf("\n");
-    }
+    print_matrix(n, n, matrix);
     householder(n, matrix);
     /*printf("Matrix After householder:\n");
     for (int i = 0; i < n; i++) {
@@ -197,12 +194,13 @@ void upper_triangular(int m, int n, double complex matrix[m][n]){
     //Q = identity matrix, R = copy of matrix
 
     double complex Q[m][n], R[m][n];
-    for(int i=0;i<m;i++){
+    eye(n, Q);
+    /*for(int i=0;i<m;i++){
         for(int j=0;j<n;j++){
             Q[i][j]=(i==j)?CMPLX(1,0):CMPLX(0,0);//Q is 'identity' matrix initially
             R[i][j]=matrix[i][j];//
         }
-    }
+    }*/
     for(int i=0;i<n-1;i++){
          givens_rotation(i, i+1, n, n, matrix, Q, R);
     }
@@ -239,11 +237,12 @@ void upper_triangular(int m, int n, double complex matrix[m][n]){
 }
 void givens_rotation(int i, int j, int m, int n, double complex matrix[m][n], double complex Q[m][n], double complex R[m][n]){
     double complex G[m][n];//G is initially identity matrix
-    for(int i=0; i<m; i++){
+    /*for(int i=0; i<m; i++){
         for(int j=0;j<n;j++){
             G[i][j]=(i==j)?CMPLX(1,0):CMPLX(0,0);
         }
-    }
+    }*/
+    eye(n, G);
     double r=sqrt(pow(cabs(matrix[i][i]),2) + pow(cabs(matrix[i+1][i]),2) );
     double complex c=conj(matrix[i][i])/r;
     double complex s=conj(matrix[i+1][i])/r;
@@ -299,4 +298,18 @@ void givens_rotation(int i, int j, int m, int n, double complex matrix[m][n], do
 
 }
 
-
+void print_matrix(int m, int n, double complex matrix[m][n]){
+    for(int i=0; i<m; i++){
+        for(int j=0; j<n; j++){
+            printf("(%lf + %lfi) ", creal(matrix[i][j]), cimag(matrix[i][j]));
+        }
+        printf("\n");
+    }
+}
+void eye(int n, double complex identity[n][n]){
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            identity[i][j]=(i==j)?CMPLX(1,0):CMPLX(0,0);
+        }
+    }
+}
