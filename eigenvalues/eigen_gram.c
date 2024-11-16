@@ -21,14 +21,14 @@ int main(){
       matrix[i][j]=CMPLX(i,j);
       }
       }*/
-    int n = 4;
+    int n=4;
     double complex matrix[4][4] = {
         {CMPLX(1, -1), CMPLX(2, 3), CMPLX(-1, 4), CMPLX(5, -2)},
         {CMPLX(3, 2), CMPLX(4, -1), CMPLX(2, 1), CMPLX(-3, 3)},
         {CMPLX(-2, 1), CMPLX(1, -3), CMPLX(3, 0), CMPLX(4, 2)},
         {CMPLX(5, 0), CMPLX(-1, -2), CMPLX(4, -1), CMPLX(3, 1)}
     };
-   /* double complex matrix[6][6] = {
+    /*double complex matrix[6][6] = {
         {CMPLX(2, 1), CMPLX(3, 0), CMPLX(5, 0), CMPLX(7, 0), CMPLX(11, 0), CMPLX(13, 0)},
         {CMPLX(17, 1), CMPLX(19, 0), CMPLX(23, 0), CMPLX(29, 0), CMPLX(31, 0), CMPLX(37, 0)},
         {CMPLX(41, 1), CMPLX(43, 0), CMPLX(47, 0), CMPLX(53, 0), CMPLX(59, 0), CMPLX(61, 0)},
@@ -46,9 +46,11 @@ int main(){
         }
         printf("\n");
     }
-    for(int count=0; count<1000; count++){
+    for(int count=0; count<1; count++){
          QR(n, matrix);
     }
+    printf("Matrix:\n");
+    print_matrix(n, n, matrix);
     printf("Eigen values:\n");
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
@@ -261,8 +263,8 @@ void QR(int n, double complex matrix[n][n]){
         for(int j=0; j<n; j++){
             Q[j][i]=col[j][0];
         }
-        printf("Q': \n");
-        print_matrix(n, n, Q);
+        //printf("Q': \n");
+        //print_matrix(n, n, Q);
     }
         /*printf("Q: \n");
     print_matrix(n, n, Q);*/
