@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <complex.h>
 #include <math.h>
@@ -52,17 +54,37 @@ int main(){
         }
             printf("\n");
     }
-    for(int count=0; count<1000; count++){
-        printf("count: %d\n", count);
+    int COUNT=0;
+    //for(int count=0; count<1000; count++){
+        /*printf("count: %d\n", count);
         if(isUpperTriangular(n, matrix)==1){
-            printf("number of iterations: %d\n", count+1);
+            printf("number of iterations: %d\n", COUNT+1);
             break;
-        }
+        }*/
         //printf("Matrix before QR:\n");
         //print_matrix(n, n, matrix);
        // upper_triangular(n, n, matrix);
-         upper_triangular_with_rayleigh(n, n, matrix);
-    }
+
+        for(int m=n; m>1; m--){
+            while(COUNT<1000){
+                if(isUpperTriangular(n, matrix)) break;
+                double complex sigma=matrix[m-1][m-1];
+                for(int i=0; i<n; i++){
+                    matrix[i][i]-=sigma;
+                }
+                upper_triangular(n, n, matrix);
+                for(int i=0; i<n; i++){
+                    matrix[i][i]+=sigma;
+                }
+                COUNT++;
+                if(cabs(matrix[m-1][m-2]) < 1e-10) break;
+            }
+
+        }
+         //upper_triangular(n, n, matrix);
+    //}
+   printf("number of iterations: %d\n", COUNT);
+
     /*printf("Eigen values:\n");
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
@@ -179,8 +201,8 @@ void householder(int n, double complex matrix[n][n]){
         }*/
 
         //finding H*
-        double complex HT[n][n];
-        transpose(n, n, H, HT);
+        //double complex HT[n][n];
+        //transpose(n, n, H, HT);
         double complex result[n][n];
         matrix_multiply(n, n, n, matrix, H, result);
         double complex final_result[n][n];
@@ -236,54 +258,8 @@ void transpose(int m, int n, double complex matrix[m][n], double complex transpo
         }
     }
 }
-void upper_triangular_with_rayleigh(int m, int n, double complex matrix[m][n]){
-    double complex Id[m][n];
-    eye(n, Id); // Generate identity matrix
-    
-    for (int iter = 0; iter < 1000; iter++) {
-        // Rayleigh shift (use bottom-right element of the matrix as the shift)
-        double complex mu = matrix[n-1][n-1];
-
-        // Apply the shift: matrix = matrix - mu * I
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                matrix[i][j] -= (i == j ? mu : 0);
-            }
-        }
-
-        // Perform QR decomposition with the shifted matrix
-        double complex Q[m][n], R[m][n];
-        eye(n, Q); // Initialize Q as identity matrix
-        for (int i = 0; i < n - 1; i++) {
-            givens_rotation(i, i+1, m, n, matrix, Q, R);
-        }
-
-        // Update matrix: matrix = R * Q + mu * I
-        double complex temp[m][n];
-        matrix_multiply(n, n, n, R, Q, temp);
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                matrix[i][j] = temp[i][j] + (i == j ? mu : 0);
-            }
-        }
-
-        // Check convergence (based on off-diagonal elements)
-        int converged = 1;
-        for (int i = 1; i < n; i++) {
-            if (cabs(matrix[i][i-1]) > 1e-10) {
-                converged = 0;
-                break;
-            }
-        }
-        if (converged) {
-            break;
-        }
-    }
-}
-
 void upper_triangular(int m, int n, double complex matrix[m][n]){
     //Q = identity matrix, R = copy of matrix
-
     double complex Q[m][n], R[m][n];
     eye(n, Q);
     /*for(int i=0;i<m;i++){
@@ -297,14 +273,17 @@ void upper_triangular(int m, int n, double complex matrix[m][n]){
          printf("Matrix after 1 givens rotation: \n");
          print_matrix(n, n, matrix);
     }
-    printf("Matrix after QR:\n");
+       //matrix_multiply(n, n, n, R, Q, matrix);
+       
+
+    
+   /* printf("Matrix after QR:\n");
     print_matrix(n, n, matrix);
     printf("Final Q:\n");
     print_matrix(n, n, Q);
     printf("Final R:\n");
     print_matrix(n, n, R);
-    matrix_multiply(n, n, n, R, Q, matrix);
-    printf("returning from upper_triangular:\n");
+        printf("returning from upper_triangular:\n");
     print_matrix(n, n, matrix);
     /*printf("Q:\n");
     for (int k = 0; k < n; k++) {
@@ -366,7 +345,10 @@ void givens_rotation(int i, int j, int m, int n, double complex matrix[m][n], do
     }*/
     double complex Gtranspose[m][n];
     transpose(m, n, G, Gtranspose);
-    double complex temp[m][n];
+    double complex temp[n][n];
+    matrix_multiply(n, n, n, G, matrix, temp);
+    matrix_multiply(n, n, n, temp, Gtranspose, matrix);
+    /*double complex temp[m][n];
     matrix_multiply(n, n, n, Q, Gtranspose, temp);
     matrix_multiply(n, n, n, G, matrix, R);
     for(int i=0; i<m; i++){
@@ -374,7 +356,7 @@ void givens_rotation(int i, int j, int m, int n, double complex matrix[m][n], do
             Q[i][j]=temp[i][j];
             matrix[i][j]=R[i][j];
         }
-    }
+    }*/
     /*printf("Q:\n");
     for (int k = 0; k < n; k++) {
         for (int j = 0; j < n; j++) {
@@ -382,13 +364,13 @@ void givens_rotation(int i, int j, int m, int n, double complex matrix[m][n], do
         }
         printf("\n");
     }*/
-    printf("R:\n");
+    /*printf("R:\n");
     for (int k = 0; k < n; k++) {
         for (int j = 0; j < n; j++) {
             printf("(%lf + %lfi) ", creal(matrix[k][j]), cimag(matrix[k][j]));
         }
         printf("\n");
-    }
+    }*/
     /*double complex verifier[m][n];
     matrix_multiply(n, n, n, Gtranspose, R, verifier);
 
