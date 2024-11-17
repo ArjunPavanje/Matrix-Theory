@@ -13,14 +13,19 @@ double complex** householder(int n, double complex** matrix){
             //x[count]=CMPLX(creal(matrix[j][i]), cimag(matrix[j][i]));  
             x[count][0]=matrix[j][i];
             count++;
-
         }
+        
         double norm_x=0;
         for(int j=0;j<count;j++){
             norm_x+=pow(cabs(x[j][0]),2);
         }
         norm_x=sqrt(norm_x);
-        x[0][0]+=(CMPLX((norm_x*cos(carg(x[0][0]))) , (norm_x*sin(carg(x[0][0]))) ));
+        //if(x[0][0]==0){
+          //  x[0][0]=-norm_x;
+        //}
+        //else{
+            x[0][0]+=(CMPLX((norm_x*cos(carg(x[0][0]))) , (norm_x*sin(carg(x[0][0]))) ));
+        //}
 
         //turning 'x' into a unit vector
         norm_x=0;
@@ -29,6 +34,8 @@ double complex** householder(int n, double complex** matrix){
         }
         norm_x=sqrt(norm_x);
         x=matscale(count, 1, x, 1/norm_x);
+        printf("Scaled Unit Vector:\n");
+        print_matrix(n-i-1, 1, x);
 
         double complex** xT = transpose(n-i-1, 1, x);
 
