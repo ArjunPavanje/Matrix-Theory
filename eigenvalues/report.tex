@@ -4,26 +4,46 @@
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{algorithm}
 \usepackage{algorithmic}
-\usepackage{algpseudocode}
 \usepackage{float}
 \usepackage{fancyhdr}
 \usepackage{array}
 \usepackage{longtable}
 \usepackage{geometry}
-\geometry{margin=1in}
+\usepackage{listings}
 \usepackage{tikz}
 \usepackage{tcolorbox}
 \usetikzlibrary{matrix}
 \usepackage{url}
+\usepackage{xcolor}
+
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{black},
+    keywordstyle=\color{blue},
+    stringstyle=\color{teal},
+}
 \geometry{a4paper, margin=1in}
 \pagestyle{fancy}
-\title{Eigenvalue Calculation}
-\author{Arjun Pavanje: EE24BTECH11005}
-\date{\today}
 
+%\usepackage[margin=1in]{geometry}
 \begin{document}
 
-\maketitle
+\begin{titlepage}                                             
+\pagestyle{empty}                                             
+\centering                                                   
+\includegraphics[width=0.7\textwidth]{IITH.png} \\ 
+\vspace{60mm}                                                 
+\hrule\vspace{5mm}                                           
+{\LARGE \textbf{{EIGENVALUE CALCULATION}}} \\          
+\vspace{5mm}\hrule\vspace{20mm}                        
+{\large Arjun Pavanje} \\ \vspace{2mm}                           
+{\large (EE24BTECH11005)}                        
+\vfill                                                       
+{\small IIT Hyderabad\\ \today}               
+\cleardoublepage                                            
+\end{titlepage}
 
 \section{Introduction}
 
@@ -257,12 +277,12 @@ So, $H$ and $A$ are similar matrices, i.e. eigenvalues are conserved. Householde
 \begin{algorithm}[H]
 \caption{Householder Reflection for Upper Hessenberg Form}
 \begin{algorithmic}[1]
-\REQUIRE A square matrix $A $ of size $n \times n$
-\ENSURE $A$ is reduced to upper Hessenberg form
+\REQUIRE A square matrix \( A \) of size \( n \times n \)
+\ENSURE \( A \) is reduced to upper Hessenberg form
 
 \FOR{\( k = 1 \) to \( n-2 \)}
     \STATE Extract the sub-vector \( \mathbf{x} \) from column \( k \), consisting of elements \( a_{k+1,k}, a_{k+2,k}, \ldots, a_{n,k} \).
-    \STATE Compute the 2-norm of \( \mathbf{x} \), \( \| \mathbf{x} \|_2 \).
+    \STATE Compute the 2-norm of \( \mathbf{x} \), \( \|\mathbf{x}\|_2 \).
     \STATE Let \( \rho = -e^{j\phi} \), where \( e^{j\phi} \) is derived from the first element of \( \mathbf{x} \).
     \STATE Define the vector \( \mathbf{u} \) as:
     \[
@@ -279,7 +299,7 @@ So, $H$ and $A$ are similar matrices, i.e. eigenvalues are conserved. Householde
     \[
     A \gets P A P.
     \]
-\ENDFOR 
+\ENDFOR
 \end{algorithmic}
 \end{algorithm}
 
@@ -550,8 +570,12 @@ Power Iteration & Simple, finds dominant eigenvalue. & Only computes the largest
 
 
 \section{Conclusion}
-The combination of Householder transformations and Givens rotations provides a robust and efficient method for eigenvalue computation, especially for dense matrices. While other methods may be tailored for specific matrix types, this approach balances numerical stability, computational efficiency, and broad applicability.
-
+The C-Code can be found at 
+{\footnotesize
+\begin{lstlisting}
+https://github.com/ArjunPavanje/Matrix-Theory/tree/main/eigenvalues
+\end{lstlisting}
+}
 \section{References}
 \begin{thebibliography}{9}
 
@@ -566,8 +590,11 @@ Axler, S. (2024). \textit{Linear Algebra Done Right (4th ed.)}. Available at: \u
 
 \bibitem{wiki} 
 Wikipedia contributors. (2024). \textit{Eigenvalue algorithm}. Available at: \url{https://en.wikipedia.org/wiki/Eigenvalue_algorithm#Hessenberg_and_tridiagonal_matrices}.
-\end{thebibliography}
 
+\bibitem{Latex Template} 
+    Latex. \textit{Latex Template}. Available at: \url{https://www.overleaf.com/latex/templates/uoe-report-dissertation-template/dnvsxhczdcpr}.
+\end{thebibliography}
 \end{document}
+
 
 

@@ -1,13 +1,16 @@
 #include <stdio.h>
+
 #include <math.h>
 #include <complex.h>
 
-double complex** matscale(int m, int n, double complex** matrix, double k);
-double complex** matrix_multiply(int m, int p, int n, double complex** A, double complex** B);
-double complex** transpose(int m, int n, double complex** matrix);
-void print_matrix(int m, int n, double complex** matrix);
-int isUpperTriangular(int n, double complex** matrix);
-double complex** eye(int n);//generating an nxn identity matrix*/
+double complex** matscale(int m, int n, double complex** matrix, double k);//Scaling a matrix by a constant 'k'
+double complex** matrix_multiply(int m, int p, int n, double complex** A, double complex** B);//Multiplying 2 matrices
+double complex** transpose(int m, int n, double complex** matrix);//Taking conjugate transpose of a matrix
+void print_matrix(int m, int n, double complex** matrix);//Printing a matrix
+int isUpperTriangular(int n, double complex** matrix);//Checking if a matrix is upper triangular
+double complex** eye(int n);//generating an nxn identity matrix
+double complex** zeros(int m, int n);//enters a matrix with all zeros                           
+
 double complex** zeros(int m, int n){
     double complex** matrix = (double complex**) malloc(sizeof(double complex)*m);
     for(int i = 0; i < m; i++){

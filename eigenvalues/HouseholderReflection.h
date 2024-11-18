@@ -11,6 +11,7 @@ double complex** householder(int n, double complex** matrix){
             x[count][0]=matrix[j][i];
             count++;
         }
+        //'x' is the 'i+1'th column of matrix
         
         double norm_x=0;
         for(int j=0;j<count;j++){
@@ -24,18 +25,17 @@ double complex** householder(int n, double complex** matrix){
             x[0][0]+=(CMPLX((norm_x*cos(carg(x[0][0]))) , (norm_x*sin(carg(x[0][0]))) ));
         }
 
-        //turning 'x' into a unit vector
+        //turning 'x' into 'u' the unit householder reflector vector
         norm_x=0;
         for(int j=0;j<count;j++){
             norm_x+=pow(cabs(x[j][0]),2);
         }
         norm_x=sqrt(norm_x);
         x=matscale(count, 1, x, 1/norm_x);
-        printf("Scaled Unit Vector:\n");
-        print_matrix(n-i-1, 1, x);
 
         double complex** xT = transpose(n-i-1, 1, x);
 
+        //generating  householder reflector matrix 'P'
         double complex** P=eye(n-i-1);
 
         double complex**  u_outer_product=matrix_multiply(n-i-1, 1, n-i-1, x, xT);
@@ -44,7 +44,7 @@ double complex** householder(int n, double complex** matrix){
                 P[l][m] -= 2 * u_outer_product[l][m];
             }
         }
-
+        
         double complex** H=zeros(n, n);
         for(int j=0;j<n;j++){//'j'=row
             for(int k=0;k<n;k++){//'k'=columns
@@ -57,7 +57,7 @@ double complex** householder(int n, double complex** matrix){
                 }
             }
         }
-        //finding H*
+       //Applying Householder reflection to matrix
         double complex** HT=transpose(n, n, H);
         double complex** result=matrix_multiply(n, n, n, matrix, H);
         matrix=matrix_multiply(n, n, n, H, result);
