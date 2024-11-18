@@ -6,11 +6,8 @@ double complex** householder(int n, double complex** matrix){
     //'i' is mumn no. 'i' goes till n-2 because in upper hessenberg form last two ls remain unchanged.
     for(int i=0;i<n-1;i++){
         double complex** x=zeros(n-i-1, 1);
-            //[n-i-1][1];
-        //printf("size: %d\n", n-i-1);
         int count=0;
         for(int j=i+1;j<n;j++){
-            //x[count]=CMPLX(creal(matrix[j][i]), cimag(matrix[j][i]));  
             x[count][0]=matrix[j][i];
             count++;
         }
@@ -20,12 +17,12 @@ double complex** householder(int n, double complex** matrix){
             norm_x+=pow(cabs(x[j][0]),2);
         }
         norm_x=sqrt(norm_x);
-        //if(x[0][0]==0){
-          //  x[0][0]=-norm_x;
-        //}
-        //else{
+        if(x[0][0]==0){
+            x[0][0]=-norm_x;
+        }
+        else{
             x[0][0]+=(CMPLX((norm_x*cos(carg(x[0][0]))) , (norm_x*sin(carg(x[0][0]))) ));
-        //}
+        }
 
         //turning 'x' into a unit vector
         norm_x=0;
@@ -40,11 +37,7 @@ double complex** householder(int n, double complex** matrix){
         double complex** xT = transpose(n-i-1, 1, x);
 
         double complex** P=eye(n-i-1);
-        /*for (int l = 0; l < n-i-1; l++) {
-            for (int m = 0; m < n-i-1; m++) {
-                P[l][m] = (l == m) ? CMPLX(1, 0) : CMPLX(0, 0);
-            }
-        }*/
+
         double complex**  u_outer_product=matrix_multiply(n-i-1, 1, n-i-1, x, xT);
         for (int l = 0; l < n-i-1; l++) {
             for (int m = 0; m < n-i-1; m++) {
@@ -64,8 +57,6 @@ double complex** householder(int n, double complex** matrix){
                 }
             }
         }
-
-
         //finding H*
         double complex** HT=transpose(n, n, H);
         double complex** result=matrix_multiply(n, n, n, matrix, H);
