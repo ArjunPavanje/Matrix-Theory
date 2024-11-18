@@ -31,8 +31,10 @@ double complex** householder(int n, double complex** matrix){
             norm_x+=pow(cabs(x[j][0]),2);
         }
         norm_x=sqrt(norm_x);
-        x=matscale(count, 1, x, 1/norm_x);
-
+        if(norm_x > 1e-10){ //Accounting for cases like null matrix
+            x=matscale(count, 1, x, 1/norm_x);
+        }
+    
         double complex** xT = transpose(n-i-1, 1, x);
 
         //generating  householder reflector matrix 'P'

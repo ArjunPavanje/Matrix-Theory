@@ -5,6 +5,9 @@ double complex** givens_rotation(int i, int j, int m, int n, double complex** ma
 double complex** givens_rotation(int i, int j, int m, int n, double complex** matrix){
     double complex** G=eye(n);
     double r=sqrt(pow(cabs(matrix[i][i]),2) + pow(cabs(matrix[j][i]),2) );
+    if(r < 1e-10){
+        return matrix;
+    }
     //conj is taking to account for cases when enteries of matrix are complex numbers
     double complex c=conj(matrix[i][i])/r;
     double complex s=conj(matrix[i+1][i])/r;
